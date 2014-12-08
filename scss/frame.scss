@@ -1,0 +1,78 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+
+@import "_oa";
+
+@include font-face(Monaco, font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+
+* {
+  vertical-align: top;
+  @include selection(rgba(150, 180, 230, 1.0000), rgba(237, 239, 244, 1.0000));
+  @include font-smoothing(antialiased);
+
+  &, &:after, &:before {
+    @include box-sizing(border-box);
+  }
+}
+
+a {
+  color: rgba(32, 80, 129, 0.8);
+
+  &:hover {
+    color: rgba(32, 80, 129, 1);
+  }
+}
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    font-family: Monaco;
+    color: #000;
+    background-color: $mainBackground;
+
+    @include font-smoothing(antialiased);
+    @include box-shadow(none);
+
+    &:before {
+      content: "";
+      position: fixed;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      z-index: 100;
+    }
+
+    #container {
+      position: relative;
+      display: inline-block;
+      width: $mainWidth;
+      margin: $mainTop auto $mainBottom auto;
+      min-height: 100px;
+
+      color: rgba(39, 40, 34, 0.9);
+
+    }
+  }
+}
+
+*.clearfix {
+  *zoom: 1;
+
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+    clear: both;
+  }
+}

@@ -1,0 +1,32 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+
+@mixin font-smoothing ($val: antialiased) {
+  -webkit-font-smoothing: $val;
+  -moz-font-smoothing: $val;
+  -ms-font-smoothing: $val;
+  -o-font-smoothing: $val;
+  -moz-osx-font-smoothing: $val;
+}
+
+@mixin overflow-docx3 () {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin white-space () {
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+}
+
+@mixin overflow-break () {
+  overflow: hidden;
+  word-break: normal; 
+  word-wrap: break-word; 
+  @include white-space();
+}
