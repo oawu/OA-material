@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>OA-rippleButton</title>
+
+    <meta name="robots" content="index,follow" />
+
+    <link href="./css/frame.css" rel="stylesheet" type="text/css">
+    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+
+    <link href="./css/oa-button.css" rel="stylesheet" type="text/css">
+
+    <link href="./css/oa-ripple-button.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-ripple-button.js" language="javascript" type="text/javascript" /></script>
+  </head>
+  <body lang="zh-tw">
+
+    <div id='container'>
+      <button class="oa-btn red-btn">Button</button>
+      <button class="oa-btn gray-btn">Button</button>
+      <button class="oa-btn orange-btn">Button</button>
+      <button class="oa-btn green-btn">Button</button>
+        <br/>
+        <br/>
+      <button class="oa-btn blue-btn">Button</button>
+      <button class="oa-btn purple-btn">Button</button>
+      <button class="oa-btn white-btn">Button</button>
+      <button class="oa-btn yellow-btn">Button</button>
+    </div>
+
+    <script type="text/javascript">
+      $(function () {
+        $('.oa-btn').OArippleButton ();
+      });
+    </script>
+  </body>
+</html>

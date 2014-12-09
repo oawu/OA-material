@@ -1,0 +1,37 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+
+@import "_oa";
+
+.oa-ripple-button {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  .oa-ripple-effect {
+    position: absolute;
+    background: rgba(0, 0, 0, .15);
+    pointer-events: none;
+
+    @include border-radius(50%);
+    @include scale(0);
+
+    &.show {
+      @include animation(ripple .75s ease-out);
+    }
+  }
+}
+@include keyframes(ripple) {
+  to {
+    @include scale(2);
+    @include opacity(0);
+  }
+}
