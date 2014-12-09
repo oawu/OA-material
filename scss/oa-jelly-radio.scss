@@ -1,20 +1,18 @@
 /**
 * @author      OA Wu <comdan66@gmail.com>
 * @copyright   Copyright (c) 2014 OA Wu Design
+* res          https://github.com/tedshd/material_design_for_web
 */
 
 @import "_oa";
 
-
-
-$radioWidth: 30px;
-$radioHeight: 30px;
-$borderWidth: 1px;
+$radioWidth: 16px;
+$radioHeight: 16px;
+$borderWidth: 2px;
 $spacingWeight: 2px;
 
-.material-design-radio {
+.oa-radio {
   position: relative;
-  border: 1px solid red;
   display: inline-block;
 
   * {
@@ -27,6 +25,7 @@ $spacingWeight: 2px;
     margin: 0;
     width: $radioWidth;
     height: $radioHeight;
+    cursor: pointer;
 
     @include opacity(0);
 
@@ -43,7 +42,9 @@ $spacingWeight: 2px;
       z-index: 0;
       width: $radioWidth;
       height: $radioHeight;
-      border: solid $borderWidth rgba(0, 0, 0, .2);
+      background-color: rgba(255, 255, 255, 1);
+      cursor: pointer;
+      pointer-events: none;
 
       @include border-radius(50%);
 
@@ -52,7 +53,7 @@ $spacingWeight: 2px;
         position: absolute;
         display: inline-block;
         margin: 0;
-        background: green;
+        pointer-events: none;
 
         top: 50%;
         left: 50%;
@@ -72,8 +73,44 @@ $spacingWeight: 2px;
           left: $spacingWeight;
           width: calc(100% - #{$spacingWeight * 2});
           height: calc(100% - #{$spacingWeight * 2});
+          @include animation(jelly .75s ease-out);
         }
       }
     }
+  }
+
+  $btns: ('gray': (110, 110, 110), 'red':  (220, 70, 70), 'orange': (220, 115, 20), 'green': (25, 175, 0), 'blue': (0, 120, 230), 'purple': (174, 129, 255), 'white': (200, 200, 200), 'yellow': (244, 219, 22));
+
+  @each $name, $colors in $btns {
+    &.#{$name}-rdo {
+      input[type='radio'] {
+        &~.check {
+          border: solid $borderWidth rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .2);
+
+          &:after {
+            background-color: rgba(nth($colors, 1), nth($colors, 2), nth($colors, 3), 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include keyframes(jelly) {
+  0% {
+    @include scale(1);
+  }
+  30% {
+    @include scale(1.7);
+    @include opacity(0.3);
+  }
+  70% {
+    @include scale(0.9);
+    @include opacity(0.8);
+  }
+  100% {
+    @include scale(1);
+    @include opacity(1);
   }
 }
