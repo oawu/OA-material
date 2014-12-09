@@ -1,0 +1,19 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ * @res         http://matthewlein.com/ceaser/
+ */
+
+@import "_oa";
+
+.oa-jelly-img {
+  position: relative;
+  z-index: 1;
+  @include transition(all .5s cubic-bezier(0.440, -0.400, 0.035, 1.260));
+  @include scale(1);
+
+  &:hover {
+    z-index: 2;
+    @include scale(1.3);
+  }
+}
