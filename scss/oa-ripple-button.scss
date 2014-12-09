@@ -24,7 +24,7 @@
     @include border-radius(50%);
     @include scale(0);
 
-    &.show {
+    &.oa-ripple-show {
       @include animation(ripple .75s ease-out);
     }
   }

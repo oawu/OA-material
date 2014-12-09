@@ -24,9 +24,9 @@
           $('<span />')
                 .addClass ('oa-ripple-effect')
                 .css ({'top': y + 'px', 'left': x + 'px', 'width': d + 'px', 'height': d + 'px', 'background-color': opt.rippleColor})
-                .addClass ('show')
+                .addClass ('oa-ripple-show')
                 .bind ('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
-                  $(this).removeClass ('show').remove ();
+                  $(this).removeClass ('oa-ripple-show').remove ();
                 }).appendTo ($(this));
         });
       }

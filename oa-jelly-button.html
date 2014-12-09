@@ -3,35 +3,39 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="zh-tw">
-    <title>OA-button</title>
+    <title>OA-jellyButton</title>
 
     <meta name="robots" content="index,follow" />
+    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
 
     <link href="./css/frame.css" rel="stylesheet" type="text/css">
     <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
 
     <link href="./css/oa-button.css" rel="stylesheet" type="text/css">
+
+    <link href="./css/oa-jelly-button.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-jelly-button.js" language="javascript" type="text/javascript" /></script>
+
   </head>
   <body lang="zh-tw">
     <div id='container'>
+      <br />
       <button class="oa-btn red-btn">Button</button>
-      <button class="oa-btn red-btn" disabled>Button</button>
       <button class="oa-btn gray-btn">Button</button>
-      <button class="oa-btn gray-btn" disabled>Button</button>
       <button class="oa-btn orange-btn">Button</button>
-      <button class="oa-btn orange-btn" disabled>Button</button>
       <button class="oa-btn green-btn">Button</button>
-      <button class="oa-btn green-btn" disabled>Button</button>
-      <br/>
-      <br/>
+        <br/>
+        <br/>
       <button class="oa-btn blue-btn">Button</button>
-      <button class="oa-btn blue-btn" disabled>Button</button>
       <button class="oa-btn purple-btn">Button</button>
-      <button class="oa-btn purple-btn" disabled>Button</button>
       <button class="oa-btn white-btn">Button</button>
-      <button class="oa-btn white-btn" disabled>Button</button>
       <button class="oa-btn yellow-btn">Button</button>
-      <button class="oa-btn yellow-btn" disabled>Button</button>
     </div>
+
+    <script type="text/javascript">
+      $(function () {
+        $('.oa-btn').OAjellyButton ();
+      });
+    </script>
   </body>
 </html>
