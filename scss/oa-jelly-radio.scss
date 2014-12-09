@@ -1,0 +1,79 @@
+/**
+* @author      OA Wu <comdan66@gmail.com>
+* @copyright   Copyright (c) 2014 OA Wu Design
+*/
+
+@import "_oa";
+
+
+
+$radioWidth: 30px;
+$radioHeight: 30px;
+$borderWidth: 1px;
+$spacingWeight: 2px;
+
+.material-design-radio {
+  position: relative;
+  border: 1px solid red;
+  display: inline-block;
+
+  * {
+    vertical-align: middle;
+  }
+
+  input[type='radio'] {
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    width: $radioWidth;
+    height: $radioHeight;
+
+    @include opacity(0);
+
+    &[disabled] {
+      cursor: not-allowed;
+      &~.check {
+        border-color: rgba(0, 0, 0, .1);
+      }
+    }
+
+    &~.check {
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+      width: $radioWidth;
+      height: $radioHeight;
+      border: solid $borderWidth rgba(0, 0, 0, .2);
+
+      @include border-radius(50%);
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        margin: 0;
+        background: green;
+
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+
+        @include opacity(0);
+        @include border-radius(50%);
+        @include transition(all .5s cubic-bezier(0.375, -0.600, 0.000, 1.520));
+      }
+    }
+    &:checked {
+      &~.check {
+        &:after {
+          @include opacity(1);
+          top: $spacingWeight;
+          left: $spacingWeight;
+          width: calc(100% - #{$spacingWeight * 2});
+          height: calc(100% - #{$spacingWeight * 2});
+        }
+      }
+    }
+  }
+}
