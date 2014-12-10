@@ -14,25 +14,25 @@
 
     <link href="./css/oa-ripple-button.css" rel="stylesheet" type="text/css">
     <script src="./res/oa-ripple-button.js" language="javascript" type="text/javascript" /></script>
+
+    <style type="text/css">
+      .oa-btn {
+        margin: 5px 10px;
+      }
+    </style>
   </head>
   <body lang="zh-tw">
 
-    <div id='container'>
-      <button class="oa-btn red-btn">Button</button>
-      <button class="oa-btn gray-btn">Button</button>
-      <button class="oa-btn orange-btn">Button</button>
-      <button class="oa-btn green-btn">Button</button>
-        <br/>
-        <br/>
-      <button class="oa-btn blue-btn">Button</button>
-      <button class="oa-btn purple-btn">Button</button>
-      <button class="oa-btn white-btn">Button</button>
-      <button class="oa-btn yellow-btn">Button</button>
-    </div>
+    <div id='container'></div>
 
     <script type="text/javascript">
       $(function () {
-        $('.oa-btn').OArippleButton ();
+        var btns = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple', 'gray', 'white'];
+        $('#container')
+          .append (btns.map (function (t) {
+            return [$('<button />').addClass ('oa-btn').addClass (t + '-btn').text ('Enable Button'), $('<button />').addClass ('oa-btn').addClass (t + '-btn').attr ('disabled', 'disabled').text ('Disable Button'), $('<br />')];
+          }).reduce (function (p, n) { return p.concat (n) }))
+          .find ('.oa-btn').OArippleButton ();
       });
     </script>
   </body>
