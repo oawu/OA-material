@@ -12,18 +12,50 @@
     <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
 
     <link href="./css/oa-jelly-checkbox.css" rel="stylesheet" type="text/css">
-
+    <style type="text/css">
+      .oa-jelly-checkbox {
+        margin: 2px 0;
+      }
+    </style>
   </head>
 
   <body lang="zh-tw">
-    <div id='container'>
+    <div id='container'></div>
 
-      <div class="oa-jelly-checkbox red-ckb">
-        <input id="checkbox" type="checkbox" value='' />
-        <span class="check"></span>
-        <label for="checkbox">checkbox</label>
-      </div>
-
-    </div>
+    <script type="text/javascript">
+      $(function () {
+        var btns = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple', 'gray', 'white'];
+        $('#container')
+          .append (
+            btns.map (function (t) {
+            return [
+              $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb')
+                .append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 1).attr ('name', t + '-ckb').attr ('checked', 'checked'))
+                .append ($('<span />').addClass ('ckb-check'))
+                .append (' ')
+                .append ($('<label />').attr ('for', t + '-ckb-' + 1).text ('radio1 at left')),
+              $('<br />'),
+              $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb')
+                .append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 2).attr ('name', t + '-ckb'))
+                .append ($('<span />').addClass ('ckb-check'))
+                .append (' ')
+                .append ($('<label />').attr ('for', t + '-ckb-' + 2).text ('radio2 at left')),
+              $('<br />'),
+              $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb')
+                .append ($('<label />').attr ('for', t + '-ckb-' + 3).text ('radio3 at right'))
+                .append (' ')
+                .append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 3).attr ('name', t + '-ckb'))
+                .append ($('<span />').addClass ('ckb-check')),
+              $('<br />'),
+              $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb')
+                .append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 4).attr ('name', t + '-ckb').attr ('disabled', 'disabled'))
+                .append ($('<span />').addClass ('ckb-check'))
+                .append (' ')
+                .append ($('<label />').attr ('for', t + '-ckb-' + 4).text ('radio4 disable')),
+              $('<hr />')
+            ];
+          }).reduce (function (p, n) { return p.concat (n) }));
+      });
+    </script>
   </body>
 </html>

@@ -8,7 +8,10 @@
 $radioWidth: 16px;
 $radioHeight: 16px;
 $borderWidth: 2px;
-$spacingWeight: 0;
+
+$tickWidth: ($radioHeight / 3) * 2;
+$tickHeight: ($radioHeight / 3) * 4;
+$tickBorderWidth: $radioWidth / 3;
 
 .oa-jelly-checkbox {
   position: relative;
@@ -29,14 +32,11 @@ $spacingWeight: 0;
 
     @include opacity(0);
 
-    // &[disabled] {
-    //   cursor: not-allowed;
-    //   &~.check {
-    //     border-color: rgba(0, 0, 0, .1);
-    //   }
-    // }
+    &[disabled] {
+      cursor: not-allowed;
+    }
 
-    &~.check {
+    &~.ckb-check {
       position: relative;
       display: inline-block;
       z-index: 0;
@@ -45,9 +45,10 @@ $spacingWeight: 0;
       background-color: rgba(255, 255, 255, 1);
       cursor: pointer;
       pointer-events: none;
+      border: solid $borderWidth transparent;
 
-          @include rotate(40deg);
-      @include border-radius(50%);
+      @include border-radius(5px);
+      @include transition(all .5s cubic-bezier(0.375, -0.600, 0.000, 1.520));
 
       &:after {
         content: "";
@@ -56,46 +57,64 @@ $spacingWeight: 0;
         margin: 0;
         pointer-events: none;
 
+        bottom: 0 - $borderWidth;
+        right: 0 - $borderWidth;
+        width: $radioWidth + $borderWidth;
+        height: $radioHeight + $borderWidth;
+        border: $borderWidth solid transparent;
+        border-width: 0 $tickBorderWidth $tickBorderWidth 0;
 
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
         @include opacity(0);
-          // top: $spacingWeight;
-          // left: $spacingWeight + ($radioWidth - $spacingWeight * 2) / 6;
-          // width: (($radioWidth - $spacingWeight * 2) / 3) * 2 - 1px * 2;
-          // height: $radioHeight - $spacingWeight * 2 - 1px * 2;
-        // @include border-radius(50%);
-        @include transition(all .5s cubic-bezier(0.375, -0.600, 0.000, 1.520));
+        @include border-radius(5px);
+        @include box-sizing(border-box);
+        @include transition(all .5s cubic-bezier(0.620, -0.415, 0.350, 1.650));
       }
     }
 
     &:checked {
-      &~.check {
+      &~.ckb-check {
+        @include animation(jelly .2s ease-out);
         &:after {
-          top: $spacingWeight;
-          left: $spacingWeight + ($radioWidth - $spacingWeight * 2) / 6;
-          width: (($radioWidth - $spacingWeight * 2) / 3) * 2 - 1px * 2;
-          height: $radioHeight - $spacingWeight * 2 - 1px * 2;
+          width: $tickWidth;
+          height: $tickHeight;
           @include opacity(1);
-          @include animation(jelly .75s ease-out);
+          @include border-radius($radioWidth / 5);
+          @include box-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+          @include simple-transform(1, 45deg, $tickWidth / 4, 0 - $tickWidth, 0, 0, 0, 0);
         }
       }
     }
   }
-  $btns: ('gray': (110, 110, 110), 'red':  (220, 70, 70), 'orange': (220, 115, 20), 'green': (25, 175, 0), 'blue': (0, 120, 230), 'purple': (174, 129, 255), 'white': (200, 200, 200), 'yellow': (244, 219, 22));
+
+  $btns: (
+    'red':  (244, 67, 54),
+    'orange': (251, 116, 72),
+    'yellow': (244, 219, 22),
+    'green': (15, 157, 88),
+    'blue': (68, 133, 243),
+    'indigo': (23, 124, 176),
+    'purple': (103, 58, 183),
+    'gray': (110, 110, 110),
+    'white': (200, 200, 200)
+    );
 
   @each $name, $colors in $btns {
     &.#{$name}-ckb {
       input[type='checkbox'] {
-        &~.check {
-          border: solid $borderWidth rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .2);
-
+        &[disabled] {
+          &~.ckb-check {
+            border: solid $borderWidth rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .25);
+          }
+        }
+        &:checked {
+          &~.ckb-check {
+            border-color: rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .3);
+          }
+        }
+        &~.ckb-check {
+          border-color: rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .4);
           &:after {
-            border: 1px solid rgba(nth($colors, 1), nth($colors, 2), nth($colors, 3), 1);
-            // border-top: 0;
-            // border-left: 0;
+            border-color: rgba(nth($colors, 1), nth($colors, 2), nth($colors, 3), 1);
           }
         }
       }
@@ -107,15 +126,15 @@ $spacingWeight: 0;
     @include scale(1);
   }
   30% {
-    @include scale(1.7);
-    @include opacity(0.3);
+    @include scale(1.2);
   }
-  70% {
+  80% {
     @include scale(0.9);
-    @include opacity(0.8);
+  }
+  90% {
+    @include scale(1.05);
   }
   100% {
     @include scale(1);
-    @include opacity(1);
   }
 }

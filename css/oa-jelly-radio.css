@@ -19,14 +19,14 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
-.oa-radio {
+.oa-jelly-radio {
   position: relative;
   display: inline-block;
 }
-.oa-radio * {
+.oa-jelly-radio * {
   vertical-align: middle;
 }
-.oa-radio input[type='radio'] {
+.oa-jelly-radio input[type='radio'] {
   position: absolute;
   z-index: 1;
   margin: 0;
@@ -36,13 +36,10 @@
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-.oa-radio input[type='radio'][disabled] {
+.oa-jelly-radio input[type='radio'][disabled] {
   cursor: not-allowed;
 }
-.oa-radio input[type='radio'][disabled] ~ .check {
-  border-color: rgba(0, 0, 0, 0.1);
-}
-.oa-radio input[type='radio'] ~ .check {
+.oa-jelly-radio input[type='radio'] ~ .rdo-check {
   position: relative;
   display: inline-block;
   z-index: 0;
@@ -55,7 +52,7 @@
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.oa-radio input[type='radio'] ~ .check:after {
+.oa-jelly-radio input[type='radio'] ~ .rdo-check:after {
   content: "";
   position: absolute;
   display: inline-block;
@@ -70,12 +67,8 @@
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
-  -o-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
-  -webkit-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
-  transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
 }
-.oa-radio input[type='radio']:checked ~ .check:after {
+.oa-jelly-radio input[type='radio']:checked ~ .rdo-check:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   top: 2px;
@@ -86,53 +79,113 @@
   -webkit-animation: jelly 0.75s ease-out;
   animation: jelly 0.75s ease-out;
 }
-.oa-radio.gray-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(10, 10, 10, 0.2);
+.oa-jelly-radio.red-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(144, 0, 0, 0.25);
 }
-.oa-radio.gray-rdo input[type='radio'] ~ .check:after {
-  background-color: #6e6e6e;
+.oa-jelly-radio.red-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(144, 0, 0, 0.4);
 }
-.oa-radio.red-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(120, 0, 0, 0.2);
+.oa-jelly-radio.red-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #f44336;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-.oa-radio.red-rdo input[type='radio'] ~ .check:after {
-  background-color: #dc4646;
+.oa-jelly-radio.orange-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(151, 16, 0, 0.25);
 }
-.oa-radio.orange-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(120, 15, 0, 0.2);
+.oa-jelly-radio.orange-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(151, 16, 0, 0.4);
 }
-.oa-radio.orange-rdo input[type='radio'] ~ .check:after {
-  background-color: #dc7314;
+.oa-jelly-radio.orange-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #fb7448;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-.oa-radio.green-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(0, 75, 0, 0.2);
+.oa-jelly-radio.yellow-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(144, 119, 0, 0.25);
 }
-.oa-radio.green-rdo input[type='radio'] ~ .check:after {
-  background-color: #19af00;
+.oa-jelly-radio.yellow-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(144, 119, 0, 0.4);
 }
-.oa-radio.blue-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(0, 20, 130, 0.2);
-}
-.oa-radio.blue-rdo input[type='radio'] ~ .check:after {
-  background-color: #0078e6;
-}
-.oa-radio.purple-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(74, 29, 155, 0.2);
-}
-.oa-radio.purple-rdo input[type='radio'] ~ .check:after {
-  background-color: #ae81ff;
-}
-.oa-radio.white-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(100, 100, 100, 0.2);
-}
-.oa-radio.white-rdo input[type='radio'] ~ .check:after {
-  background-color: #c8c8c8;
-}
-.oa-radio.yellow-rdo input[type='radio'] ~ .check {
-  border: solid 2px rgba(144, 119, 0, 0.2);
-}
-.oa-radio.yellow-rdo input[type='radio'] ~ .check:after {
+.oa-jelly-radio.yellow-rdo input[type='radio'] ~ .rdo-check:after {
   background-color: #f4db16;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.oa-jelly-radio.green-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(0, 57, 0, 0.25);
+}
+.oa-jelly-radio.green-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(0, 57, 0, 0.4);
+}
+.oa-jelly-radio.green-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #0f9d58;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.oa-jelly-radio.blue-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(0, 33, 143, 0.25);
+}
+.oa-jelly-radio.blue-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(0, 33, 143, 0.4);
+}
+.oa-jelly-radio.blue-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #4485f3;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.oa-jelly-radio.indigo-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(0, 24, 76, 0.25);
+}
+.oa-jelly-radio.indigo-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(0, 24, 76, 0.4);
+}
+.oa-jelly-radio.indigo-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #177cb0;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.oa-jelly-radio.purple-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(3, 0, 83, 0.25);
+}
+.oa-jelly-radio.purple-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(3, 0, 83, 0.4);
+}
+.oa-jelly-radio.purple-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #673ab7;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.oa-jelly-radio.gray-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(10, 10, 10, 0.25);
+}
+.oa-jelly-radio.gray-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(10, 10, 10, 0.4);
+}
+.oa-jelly-radio.gray-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #6e6e6e;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.oa-jelly-radio.white-rdo input[type='radio'][disabled] ~ .rdo-check {
+  border: solid 2px rgba(100, 100, 100, 0.25);
+}
+.oa-jelly-radio.white-rdo input[type='radio'] ~ .rdo-check {
+  border: solid 2px rgba(100, 100, 100, 0.4);
+}
+.oa-jelly-radio.white-rdo input[type='radio'] ~ .rdo-check:after {
+  background-color: #c8c8c8;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 @-moz-keyframes jelly {

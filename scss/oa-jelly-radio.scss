@@ -11,7 +11,7 @@ $radioHeight: 16px;
 $borderWidth: 2px;
 $spacingWeight: 2px;
 
-.oa-radio {
+.oa-jelly-radio {
   position: relative;
   display: inline-block;
 
@@ -31,12 +31,9 @@ $spacingWeight: 2px;
 
     &[disabled] {
       cursor: not-allowed;
-      &~.check {
-        border-color: rgba(0, 0, 0, .1);
-      }
     }
 
-    &~.check {
+    &~.rdo-check {
       position: relative;
       display: inline-block;
       z-index: 0;
@@ -62,11 +59,10 @@ $spacingWeight: 2px;
 
         @include opacity(0);
         @include border-radius(50%);
-        @include transition(all .5s cubic-bezier(0.375, -0.600, 0.000, 1.520));
       }
     }
     &:checked {
-      &~.check {
+      &~.rdo-check {
         &:after {
           @include opacity(1);
           top: $spacingWeight;
@@ -79,16 +75,32 @@ $spacingWeight: 2px;
     }
   }
 
-  $btns: ('gray': (110, 110, 110), 'red':  (220, 70, 70), 'orange': (220, 115, 20), 'green': (25, 175, 0), 'blue': (0, 120, 230), 'purple': (174, 129, 255), 'white': (200, 200, 200), 'yellow': (244, 219, 22));
+  $btns: (
+    'red':  (244, 67, 54),
+    'orange': (251, 116, 72),
+    'yellow': (244, 219, 22),
+    'green': (15, 157, 88),
+    'blue': (68, 133, 243),
+    'indigo': (23, 124, 176),
+    'purple': (103, 58, 183),
+    'gray': (110, 110, 110),
+    'white': (200, 200, 200)
+    );
 
   @each $name, $colors in $btns {
     &.#{$name}-rdo {
       input[type='radio'] {
-        &~.check {
-          border: solid $borderWidth rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .2);
+        &[disabled] {
+          &~.rdo-check {
+            border: solid $borderWidth rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .25);
+          }
+        }
+        &~.rdo-check {
+          border: solid $borderWidth rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .4);
 
           &:after {
             background-color: rgba(nth($colors, 1), nth($colors, 2), nth($colors, 3), 1);
+            @include box-shadow(inset 1px 1px 2px rgba(0, 0, 0, 0.2));
           }
         }
       }
