@@ -1,0 +1,106 @@
+@import "_oa";
+
+$list_opacity: 0.2;
+$border_radius: 3px;
+$width: 300px;
+
+div.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 50px;
+  text-align: left;
+
+  &.closed {
+    ul {
+      @include opacity(0);
+
+      li {
+        border-width: 0;
+        height: 0px;
+      }
+    }
+    div.title {
+      border-bottom-width: 1px;
+      @include border-radius(3px);
+    }
+    div.title:after {
+      @include rotate(0deg);
+    }
+  }
+
+  div.title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 12px;
+    border: 1px solid red;
+    border-bottom-width: 0;
+    cursor: pointer;
+
+    @include box-sizing('border-box');
+    @include background-image(
+      linear-gradient(
+        top,
+        rgba(230, 230, 230, $list_opacity),
+        rgba(160, 160, 160, $list_opacity)
+      )
+    );
+    @include border-radius(3px 3px 0 0);
+    @include transition(all .5s);
+    // @include box-shadow(0px 1px 0px 0px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.3));
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: "▾";
+      font-size: 26px;
+      right: 12px;
+      top: 0;
+
+      @include transition(all .5s cubic-bezier(0.375, -0.600, 0.000, 1.520));
+      @include rotate(180deg);
+    }
+  }
+
+  ul {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid red;
+    border-width: 0 1px 1px 1px;
+    @include opacity(1);
+    @include transition(all .5s cubic-bezier(0.375, -0.600, 0.000, 1.520));
+    @include border-radius(0px 0px 3px 3px);
+    overflow: hidden;
+    // @include transition(margin-top 1s);
+    // @include box-shadow(0px 1px 0px 0px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.3));
+    // border: 1px solid red;
+
+    li {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 12px;
+      border-top: 1px solid red;
+
+      vertical-align: top;
+      overflow: hidden;
+      cursor: pointer;
+      @include box-sizing("border-box");
+      @include background-image(linear-gradient(top, rgba(230, 230, 230, $list_opacity), rgba(160, 160, 160, $list_opacity)));
+      @include transition(all .5s cubic-bezier(0.25, 2, 0.69, 0.66));
+
+      // &:first-child {
+      //   border-bottom: none;
+      //   border-top: none;
+      // }
+      &:last-child {
+        // border-bottom-width: 0;
+      }
+      &:hover {
+        text-shadow: 0px 1px 1px black, 0px 0px 4px white;
+      }
+    }
+  }
+}
