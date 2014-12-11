@@ -18,7 +18,7 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
-.oa-jelly-button {
+.oa-jelly {
   position: relative;
   display: inline-block;
   outline: none;
@@ -29,10 +29,10 @@
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-.oa-jelly-button[disabled] {
+.oa-jelly[disabled] {
   cursor: not-allowed;
 }
-.oa-jelly-button.oa-jelly-effect {
+.oa-jelly.oa-jelly-effect {
   -moz-animation: jelly 0.2s ease-out;
   -webkit-animation: jelly 0.2s ease-out;
   animation: jelly 0.2s ease-out;

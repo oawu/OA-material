@@ -8,12 +8,12 @@
   else factory (jQuery);
 }(function ($) {
   $.fn.extend ({
-    OArippleButton: function (opt) {
+    OAripple: function (opt) {
       var d4Opt = {
         rippleColor: 'rgba(0, 0, 0, 0.15)'
       },
       init = function (opt) {
-        $(this).addClass ('oa-ripple-button');
+        $(this).addClass ('oa-ripple');
         var d = Math.max (parseFloat ($(this).css ('width')), parseFloat ($(this).css ('height'))) * 2;
 
         $(this).click (function (e) {

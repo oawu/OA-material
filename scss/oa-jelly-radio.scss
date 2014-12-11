@@ -6,12 +6,14 @@
 
 @import "_oa";
 
+$btns: $mainBtns;
+
 $radioWidth: 16px;
 $radioHeight: 16px;
 $borderWidth: 2px;
 $spacingWeight: 2px;
 
-.oa-radio {
+.oa-jelly-radio {
   position: relative;
   display: inline-block;
 
@@ -31,12 +33,13 @@ $spacingWeight: 2px;
 
     &[disabled] {
       cursor: not-allowed;
-      &~.check {
+      &~.rdo-check {
         border-color: rgba(0, 0, 0, .1);
       }
     }
 
-    &~.check {
+    &~.rdo-check {
+      border: 1px solid red;
       position: relative;
       display: inline-block;
       z-index: 0;
@@ -66,7 +69,7 @@ $spacingWeight: 2px;
       }
     }
     &:checked {
-      &~.check {
+      &~.rdo-check {
         &:after {
           @include opacity(1);
           top: $spacingWeight;
@@ -79,12 +82,10 @@ $spacingWeight: 2px;
     }
   }
 
-  $btns: ('gray': (110, 110, 110), 'red':  (220, 70, 70), 'orange': (220, 115, 20), 'green': (25, 175, 0), 'blue': (0, 120, 230), 'purple': (174, 129, 255), 'white': (200, 200, 200), 'yellow': (244, 219, 22));
-
   @each $name, $colors in $btns {
     &.#{$name}-rdo {
       input[type='radio'] {
-        &~.check {
+        &~.rdo-check {
           border: solid $borderWidth rgba(nth($colors, 1) - 100, nth($colors, 2) - 100,nth($colors, 3) - 100, .2);
 
           &:after {

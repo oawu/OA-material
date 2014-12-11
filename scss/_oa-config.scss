@@ -7,3 +7,15 @@ $mainWidth: 960px !global;
 $mainBackground: rgba(233, 234, 237, 1) !global;
 $mainTop: 0;
 $mainBottom: 0;
+
+$mainBtns: (
+    'red':  (244, 67, 54),
+    'orange': (251, 116, 72),
+    'yellow': (244, 219, 22),
+    'green': (15, 157, 88),
+    'blue': (68, 133, 243),
+    'indigo': (23, 124, 176),
+    'purple': (103, 58, 183),
+    'gray': (110, 110, 110),
+    'white': (200, 200, 200)
+    )

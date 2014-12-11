@@ -12,11 +12,11 @@
 
     <link href="./css/oa-button.css" rel="stylesheet" type="text/css">
 
-    <link href="./css/oa-jelly-button.css" rel="stylesheet" type="text/css">
-    <script src="./res/oa-jelly-button.js" language="javascript" type="text/javascript" /></script>
+    <link href="./css/oa-jelly.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-jelly.js" language="javascript" type="text/javascript" /></script>
 
-    <link href="./css/oa-ripple-button.css" rel="stylesheet" type="text/css">
-    <script src="./res/oa-ripple-button.js" language="javascript" type="text/javascript" /></script>
+    <link href="./css/oa-ripple.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-ripple.js" language="javascript" type="text/javascript" /></script>
 
     <style type="text/css">
       .oa-btn {
@@ -35,7 +35,7 @@
           .append (btns.map (function (t) {
             return [$('<button />').addClass ('oa-btn').addClass (t + '-btn').text ('Enable Button'), $('<button />').addClass ('oa-btn').addClass (t + '-btn').attr ('disabled', 'disabled').text ('Disable Button'), $('<br />')];
           }).reduce (function (p, n) { return p.concat (n) }))
-          .find ('.oa-btn').OAjellyButton ().OArippleButton ();
+          .find ('.oa-btn').OAjelly ().OAripple ();
       });
     </script>
   </body>

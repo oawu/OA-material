@@ -8,12 +8,12 @@
   else factory (jQuery);
 }(function ($) {
   $.fn.extend ({
-    OAjellyButton: function (opt) {
+    OAjelly: function (opt) {
       var d4Opt = {
         rippleColor: 'rgba(0, 0, 0, 0.15)'
       },
       init = function (opt) {
-        $(this).addClass ('oa-jelly-button')
+        $(this).addClass ('oa-jelly')
         .click (function () {
           $(this).addClass ('oa-jelly-effect')
                  .bind ('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
