@@ -1,0 +1,283 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+.oa-jelly-switch {
+  position: relative;
+  display: inline-block;
+}
+.oa-jelly-switch * {
+  vertical-align: middle;
+}
+.oa-jelly-switch input[type='checkbox'] {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  width: 56px;
+  height: 36px;
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+.oa-jelly-switch input[type='checkbox'][disabled], .oa-jelly-switch input[type='checkbox'][disabled] * {
+  cursor: not-allowed;
+}
+.oa-jelly-switch input[type='checkbox'][disabled] ~ .swh-check:after {
+  -moz-box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+}
+.oa-jelly-switch input[type='checkbox'] ~ .swh-check {
+  pointer-events: none;
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  width: 56px;
+  height: 36px;
+  cursor: pointer;
+  pointer-events: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
+  -o-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
+  -webkit-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
+  transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
+}
+.oa-jelly-switch input[type='checkbox'] ~ .swh-check:before, .oa-jelly-switch input[type='checkbox'] ~ .swh-check:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.oa-jelly-switch input[type='checkbox'] ~ .swh-check:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 5px);
+  left: 0;
+  display: inline-block;
+  margin: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.175);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.175);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.175);
+}
+.oa-jelly-switch input[type='checkbox'] ~ .swh-check:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+  display: inline-block;
+  margin: 0;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  -moz-box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.275);
+  -webkit-box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.275);
+  box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.275);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-transition: all 0.5s cubic-bezier(0.25, 2, 0.69, 0.66);
+  -o-transition: all 0.5s cubic-bezier(0.25, 2, 0.69, 0.66);
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 2, 0.69, 0.66);
+  transition: all 0.5s cubic-bezier(0.25, 2, 0.69, 0.66);
+}
+.oa-jelly-switch input[type='checkbox']:checked ~ .swh-check:after {
+  left: 36px;
+}
+.oa-jelly-switch.swh-full input[type='checkbox'] ~ .swh-check:before {
+  top: calc(50% - 10px);
+  height: 20px;
+}
+.oa-jelly-switch.swh-full input[type='checkbox'] ~ .swh-check:after {
+  left: 0;
+  -moz-box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.2);
+}
+.oa-jelly-switch.swh-full input[type='checkbox']:checked ~ .swh-check:after {
+  left: 36px;
+}
+.oa-jelly-switch.red-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(255, 122, 109, 0.2);
+}
+.oa-jelly-switch.red-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(255, 152, 139, 0.9);
+}
+.oa-jelly-switch.red-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(255, 92, 79, 0.8);
+}
+.oa-jelly-switch.red-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #db2a1d;
+}
+.oa-jelly-switch.red-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(255, 142, 129, 0.8);
+}
+.oa-jelly-switch.red-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #ff5c4f;
+}
+.oa-jelly-switch.orange-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(255, 171, 127, 0.2);
+}
+.oa-jelly-switch.orange-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(255, 201, 157, 0.9);
+}
+.oa-jelly-switch.orange-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(255, 141, 97, 0.8);
+}
+.oa-jelly-switch.orange-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #e25b2f;
+}
+.oa-jelly-switch.orange-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(255, 191, 147, 0.8);
+}
+.oa-jelly-switch.orange-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #ff8d61;
+}
+.oa-jelly-switch.yellow-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(255, 255, 77, 0.2);
+}
+.oa-jelly-switch.yellow-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(255, 255, 107, 0.9);
+}
+.oa-jelly-switch.yellow-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(255, 244, 47, 0.8);
+}
+.oa-jelly-switch.yellow-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #dbc200;
+}
+.oa-jelly-switch.yellow-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(255, 255, 97, 0.8);
+}
+.oa-jelly-switch.yellow-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #fff42f;
+}
+.oa-jelly-switch.green-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(70, 212, 143, 0.2);
+}
+.oa-jelly-switch.green-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(120, 242, 173, 0.9);
+}
+.oa-jelly-switch.green-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(40, 182, 113, 0.8);
+}
+.oa-jelly-switch.green-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #00843f;
+}
+.oa-jelly-switch.green-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(90, 232, 163, 0.8);
+}
+.oa-jelly-switch.green-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #28b671;
+}
+.oa-jelly-switch.blue-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(123, 188, 255, 0.2);
+}
+.oa-jelly-switch.blue-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(173, 218, 255, 0.9);
+}
+.oa-jelly-switch.blue-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(93, 158, 255, 0.8);
+}
+.oa-jelly-switch.blue-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #2b6cda;
+}
+.oa-jelly-switch.blue-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(143, 208, 255, 0.8);
+}
+.oa-jelly-switch.blue-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #5d9eff;
+}
+.oa-jelly-switch.indigo-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(78, 179, 231, 0.2);
+}
+.oa-jelly-switch.indigo-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(128, 209, 255, 0.9);
+}
+.oa-jelly-switch.indigo-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(48, 149, 201, 0.8);
+}
+.oa-jelly-switch.indigo-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #006397;
+}
+.oa-jelly-switch.indigo-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(98, 199, 251, 0.8);
+}
+.oa-jelly-switch.indigo-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #3095c9;
+}
+.oa-jelly-switch.purple-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(158, 113, 238, 0.2);
+}
+.oa-jelly-switch.purple-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(208, 143, 255, 0.9);
+}
+.oa-jelly-switch.purple-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(128, 83, 208, 0.8);
+}
+.oa-jelly-switch.purple-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #4e219e;
+}
+.oa-jelly-switch.purple-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(178, 133, 255, 0.8);
+}
+.oa-jelly-switch.purple-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #8053d0;
+}
+.oa-jelly-switch.gray-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(165, 165, 165, 0.2);
+}
+.oa-jelly-switch.gray-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(215, 195, 195, 0.9);
+}
+.oa-jelly-switch.gray-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(135, 135, 135, 0.8);
+}
+.oa-jelly-switch.gray-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #555555;
+}
+.oa-jelly-switch.gray-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(185, 185, 185, 0.8);
+}
+.oa-jelly-switch.gray-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #878787;
+}
+.oa-jelly-switch.white-swh input[type='checkbox'][disabled] ~ .swh-check:before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.oa-jelly-switch.white-swh input[type='checkbox'][disabled] ~ .swh-check:after {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.oa-jelly-switch.white-swh input[type='checkbox']:checked ~ .swh-check:before {
+  background-color: rgba(225, 225, 225, 0.8);
+}
+.oa-jelly-switch.white-swh input[type='checkbox']:checked ~ .swh-check:after {
+  background-color: #afafaf;
+}
+.oa-jelly-switch.white-swh input[type='checkbox'] ~ .swh-check:before {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.oa-jelly-switch.white-swh input[type='checkbox'] ~ .swh-check:after {
+  background-color: #e1e1e1;
+}

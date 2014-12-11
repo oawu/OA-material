@@ -51,6 +51,9 @@
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
   -moz-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
   -o-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
   -webkit-transition: all 0.5s cubic-bezier(0.375, -0.6, 0, 1.52);
@@ -64,10 +67,18 @@
   pointer-events: none;
   bottom: -2px;
   right: -2px;
-  width: 18px;
-  height: 18px;
+  width: 10.66667px;
+  height: 21.33333px;
   border: 2px solid transparent;
   border-width: 0 5.33333px 5.33333px 0;
+  -moz-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -ms-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -webkit-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-border-radius: 5px;
@@ -76,10 +87,10 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-transition: all 0.5s cubic-bezier(0.62, -0.415, 0.35, 1.65);
-  -o-transition: all 0.5s cubic-bezier(0.62, -0.415, 0.35, 1.65);
-  -webkit-transition: all 0.5s cubic-bezier(0.62, -0.415, 0.35, 1.65);
-  transition: all 0.5s cubic-bezier(0.62, -0.415, 0.35, 1.65);
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .oa-jelly-checkbox input[type='checkbox']:checked ~ .ckb-check {
   -moz-animation: jelly 0.2s ease-out;

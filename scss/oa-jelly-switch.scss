@@ -1,0 +1,183 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+
+@import "_oa";
+
+$switchWidth: 56px;
+$switchHeight: 36px;
+
+$buttonWeight: 20px;
+$barHeight: 10px;
+$space: 0;
+
+
+.oa-jelly-switch {
+  position: relative;
+  display: inline-block;
+
+  * {
+    vertical-align: middle;
+  }
+
+
+
+  input[type='checkbox'] {
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    width: $switchWidth;
+    height: $switchHeight;
+    cursor: pointer;
+
+    @include opacity(0);
+
+    &[disabled] {
+      &, * {
+        cursor: not-allowed;
+      }
+      &~.swh-check {
+        &:after {
+          @include box-shadow(
+            inset -1px -1px 1px rgba(0, 0, 0, 0.1),
+            inset 1px 1px 1px rgba(255, 255, 255, 0.1));
+        }
+      }
+    }
+
+    &~.swh-check {
+      pointer-events: none;
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+      width: $switchWidth;
+      height: $switchHeight;
+      cursor: pointer;
+      pointer-events: none;
+
+      @include box-sizing(border-box);
+      @include transition(all .5s cubic-bezier(0.375, -0.600, 0.000, 1.520));
+
+      &:before, &:after {
+        @include box-sizing(border-box);
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: calc(50% - #{$barHeight / 2});
+        left: 0;
+        display: inline-block;
+        margin: 0;
+        pointer-events: none;
+        width: 100%;
+        height: $barHeight;
+
+        @include border-radius($barHeight);
+
+        @include box-shadow(
+          inset 1px 1px 2px rgba(0, 0, 0, 0.175));
+        // background-color: pink;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top:  calc(50% - #{$buttonWeight / 2});
+        left: 0 + $space;
+        display: inline-block;
+        margin: 0;
+        pointer-events: none;
+        width: $buttonWeight;
+        height: $buttonWeight;
+
+        @include box-shadow(
+          inset -1px -1px 1px rgba(0, 0, 0, 0.2),
+          inset 1px 1px 1px rgba(255, 255, 255, 0.2),
+          1px 1px 2px rgba(0, 0, 0, 0.275));
+
+        @include border-radius(50%);
+        @include transition(all .5s cubic-bezier(0.25, 2, 0.69, 0.66));
+      }
+    }
+
+    &:checked {
+      &~.swh-check {
+        &:after {
+          left: 0 + $switchWidth - $buttonWeight - $space;
+        }
+      }
+    }
+  }
+
+  &.swh-full {
+    input[type='checkbox'] {
+      &~.swh-check {
+        &:before {
+          top: calc(50% - #{$buttonWeight / 2});
+          height: $buttonWeight;
+        }
+        &:after {
+          left: 0;
+
+          @include box-shadow(
+            inset -1px -1px 1px rgba(0, 0, 0, 0.2),
+            inset 1px 1px 1px rgba(255, 255, 255, 0.2));
+          }
+      }
+
+      &:checked {
+        &~.swh-check {
+          &:after {
+            left: 0 + $switchWidth - $buttonWeight;
+          }
+        }
+      }
+    }
+  }
+  $btns: (
+    'red':  (244, 67, 54),
+    'orange': (251, 116, 72),
+    'yellow': (244, 219, 22),
+    'green': (15, 157, 88),
+    'blue': (68, 133, 243),
+    'indigo': (23, 124, 176),
+    'purple': (103, 58, 183),
+    'gray': (110, 110, 110),
+    'white': (200, 200, 200)
+    );
+
+  @each $name, $colors in $btns {
+    &.#{$name}-swh {
+      input[type='checkbox'] {
+        &[disabled] {
+          &~.swh-check {
+            &:before {
+              background-color: rgba(nth($colors, 1) + 55, nth($colors, 2) + 55, nth($colors, 3) + 55, 0.2);
+            }
+            &:after {
+              background-color: rgba(nth($colors, 1) + 105, nth($colors, 2) + 85, nth($colors, 3) + 85, 0.9);
+            }
+          }
+        }
+        &:checked {
+          &~.swh-check {
+            &:before {
+              background-color: rgba(nth($colors, 1) + 25, nth($colors, 2) + 25, nth($colors, 3) + 25, 0.8);
+            }
+            &:after {
+              background-color: rgba(nth($colors, 1) - 25, nth($colors, 2) - 25, nth($colors, 3) - 25, 1);
+            }
+          }
+        }
+        &~.swh-check {
+          &:before {
+            background-color: rgba(nth($colors, 1) + 75, nth($colors, 2) + 75, nth($colors, 3) + 75, 0.8);
+          }
+          &:after {
+            background-color: rgba(nth($colors, 1) + 25, nth($colors, 2) + 25, nth($colors, 3) + 25, 1);
+          }
+        }
+      }
+    }
+  }
+}
