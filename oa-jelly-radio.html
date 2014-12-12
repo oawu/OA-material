@@ -12,6 +12,13 @@
 
     <link href="./css/oa-jelly-radio.css" rel="stylesheet" type="text/css">
     <style type="text/css">
+      .group {
+        display: inline-block;
+        width: 200px;
+        padding: 5px;
+        text-align: center;
+        margin: 5px auto;
+      }
       .oa-jelly-radio {
         margin: 3px 0;
       }
@@ -23,35 +30,36 @@
 
     <script type="text/javascript">
       $(function () {
-        var btns = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple', 'gray', 'white'];
+        var btns = ['red', 'Pink', 'orange', 'deep-orange', 'yellow', 'amber', 'light-green', 'green', 'lime', 'teal', 'blue', 'light-blue', 'cyan', 'indigo', 'purple', 'deep-purple', 'brown', 'gray', 'blue-gray', 'white'];
         $('#container')
           .append (
             btns.map (function (t) {
             return [
-              $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 1).attr ('name', t + '-rdo').attr ('checked', 'checked'))
-                .append ($('<span />').addClass ('rdo-check'))
-                .append (' ')
-                .append ($('<label />').attr ('for', t + '-rdo-' + 1).text ('radio1 at left')),
-              $('<br />'),
-              $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 2).attr ('name', t + '-rdo'))
-                .append ($('<span />').addClass ('rdo-check'))
-                .append (' ')
-                .append ($('<label />').attr ('for', t + '-rdo-' + 2).text ('radio2 at left')),
-              $('<br />'),
-              $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                .append ($('<label />').attr ('for', t + '-rdo-' + 3).text ('radio3 at right'))
-                .append (' ')
-                .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 3).attr ('name', t + '-rdo'))
-                .append ($('<span />').addClass ('rdo-check')),
-              $('<br />'),
-              $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 4).attr ('name', t + '-rdo').attr ('disabled', 'disabled'))
-                .append ($('<span />').addClass ('rdo-check'))
-                .append (' ')
-                .append ($('<label />').attr ('for', t + '-rdo-' + 4).text ('radio4 disable')),
-              $('<hr />')
+              $('<div />').addClass ('group').append (
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
+                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 1).attr ('name', t + '-rdo').attr ('checked', 'checked'))
+                  .append ($('<span />').addClass ('rdo-check'))
+                  .append (' ')
+                  .append ($('<label />').attr ('for', t + '-rdo-' + 1).text ('radio1 at left')),
+                $('<br />'),
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
+                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 2).attr ('name', t + '-rdo'))
+                  .append ($('<span />').addClass ('rdo-check'))
+                  .append (' ')
+                  .append ($('<label />').attr ('for', t + '-rdo-' + 2).text ('radio2 at left')),
+                $('<br />'),
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
+                  .append ($('<label />').attr ('for', t + '-rdo-' + 3).text ('radio3 at right'))
+                  .append (' ')
+                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 3).attr ('name', t + '-rdo'))
+                  .append ($('<span />').addClass ('rdo-check')),
+                $('<br />'),
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
+                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 4).attr ('name', t + '-rdo').attr ('disabled', 'disabled'))
+                  .append ($('<span />').addClass ('rdo-check'))
+                  .append (' ')
+                  .append ($('<label />').attr ('for', t + '-rdo-' + 4).text ('radio4 disable'))
+              )
             ];
           }).reduce (function (p, n) { return p.concat (n) }));
       });
