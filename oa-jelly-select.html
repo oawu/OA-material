@@ -15,30 +15,41 @@
 
     <link href="./css/oa-jelly-select.css" rel="stylesheet" type="text/css">
     <script src="./res/oa-jelly-select.js" language="javascript" type="text/javascript" /></script>
+
     <style type="text/css">
-      .dropdown {
-        margin-left: 10px;
+      .oa-select {
+        display: inline-block;
+        margin: 10px;
       }
     </style>
   </head>
 
   <body lang="zh-tw">
-    <div id='container'>
-
-      <br/>
-      <div class="oa-jelly-dropdown blue-dpd">
-        <div class="dpd-title">請選擇..</div>
-        <ul>
-          <li>LiljeholmTelefonplanTelefonplanTelefonplanTelefonplanen</li>
-          <li>MidsomTelefonplanTelefonplanTelefonplanTelefonplanmarkransen</li>
-          <li>TelefonTelefonplanTelefonplanTelefonplanTelefonplanplan</li>
-        </ul>
-      </div>
-
-    </div>
+    <div id='container'></div>
 
     <script type="text/javascript">
       $(function () {
+        var selects = ['pure', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple', 'gray', 'white'];
+        var $a = $('#container')
+          .append (selects.map (function (t) {
+            return [
+              $('<select />').addClass ('oa-select').data ('color', t)
+                             .append ($('<option />').text ('Item 1').val ('1'))
+                             .append ($('<option />').text ('Item 2').val ('2'))
+                             .append ($('<option />').text ('Item 3').val ('3')),
+              $('<select />').addClass ('oa-select').data ('color', t)
+                             .append ($('<option />').text ('Item 1').val ('1'))
+                             .append ($('<option />').text ('Item 2(default)').val ('2').attr ('selected', 'selected'))
+                             .append ($('<option />').text ('Item 3').val ('3')),
+              $('<select />').addClass ('oa-select').data ('color', t).attr ('disabled', 'disabled')
+                             .append ($('<option />').text ('Item 1').val ('1'))
+                             .append ($('<option />').text ('Item 2').val ('2'))
+                             .append ($('<option />').text ('Item 3').val ('3')),
+              $('<br />')
+            ];
+
+          }).reduce (function (p, n) { return p.concat (n) }))
+          .find ('.oa-select').OAjellyDropdown ({ width: '220px'}).click (function () { $(this).siblings ().addClass ('dpd-closed'); })
       });
     </script>
   </body>

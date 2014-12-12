@@ -1,4 +1,4 @@
-require 'ceaser-easing'
+# require 'ceaser-easing'
 # require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 

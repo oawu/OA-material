@@ -2,6 +2,11 @@
 /**
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
+ * @reference   http://codepen.io/carlcalderon/pen/KhwDH
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
  */
 /**
  * @author      OA Wu <comdan66@gmail.com>
@@ -18,8 +23,17 @@
 .oa-jelly-dropdown {
   position: relative;
   display: block;
-  height: 50px;
   text-align: left;
+}
+.oa-jelly-dropdown[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+.oa-jelly-dropdown[disabled] .dpd-title {
+  cursor: not-allowed;
+}
+.oa-jelly-dropdown[disabled] ul li {
+  cursor: not-allowed;
 }
 .oa-jelly-dropdown.dpd-closed ul {
   border-color: transparent;
@@ -54,6 +68,8 @@
   cursor: pointer;
   color: rgba(30, 30, 30, 0.85);
   font-weight: bolder;
+  z-index: 1;
+  background-color: #e9eaed;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -88,14 +104,21 @@
   transition: all 0.3s cubic-bezier(1, 0.12, 0.605, 0.805);
 }
 .oa-jelly-dropdown ul {
+  position: absolute;
+  width: 100%;
   margin: 0;
   overflow: hidden;
   padding: 0;
   border: 1px solid rgba(25, 25, 25, 0.3);
   border-width: 0 1px 1px 1px;
   overflow: hidden;
+  z-index: 2;
+  background-color: #e9eaed;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -moz-border-radius: 0px 0px 3px 3px;
   -webkit-border-radius: 0px;
   border-radius: 0px 0px 3px 3px;
@@ -114,7 +137,7 @@
   vertical-align: top;
   overflow: hidden;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(30, 30, 30, 0.65);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -127,7 +150,10 @@
   transition: all 0.5s cubic-bezier(0.25, 2, 0.69, 0.66);
 }
 .oa-jelly-dropdown ul li:hover {
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(30, 30, 30, 0.85);
+}
+.oa-jelly-dropdown.red-dpd[disabled] ul li:hover {
+  background-color: rgba(244, 67, 54, 0.2);
 }
 .oa-jelly-dropdown.red-dpd .dpd-title {
   border-color: rgba(219, 42, 29, 0.7);
@@ -146,6 +172,9 @@
 .oa-jelly-dropdown.red-dpd ul li:hover {
   background-color: rgba(254, 77, 64, 0.3);
 }
+.oa-jelly-dropdown.orange-dpd[disabled] ul li:hover {
+  background-color: rgba(251, 116, 72, 0.2);
+}
 .oa-jelly-dropdown.orange-dpd .dpd-title {
   border-color: rgba(226, 91, 47, 0.7);
   background-color: rgba(251, 116, 72, 0.15);
@@ -162,6 +191,9 @@
 }
 .oa-jelly-dropdown.orange-dpd ul li:hover {
   background-color: rgba(255, 126, 82, 0.3);
+}
+.oa-jelly-dropdown.yellow-dpd[disabled] ul li:hover {
+  background-color: rgba(244, 219, 22, 0.2);
 }
 .oa-jelly-dropdown.yellow-dpd .dpd-title {
   border-color: rgba(219, 194, 0, 0.7);
@@ -180,6 +212,9 @@
 .oa-jelly-dropdown.yellow-dpd ul li:hover {
   background-color: rgba(254, 229, 32, 0.3);
 }
+.oa-jelly-dropdown.green-dpd[disabled] ul li:hover {
+  background-color: rgba(15, 157, 88, 0.2);
+}
 .oa-jelly-dropdown.green-dpd .dpd-title {
   border-color: rgba(0, 132, 63, 0.7);
   background-color: rgba(15, 157, 88, 0.15);
@@ -196,6 +231,9 @@
 }
 .oa-jelly-dropdown.green-dpd ul li:hover {
   background-color: rgba(25, 167, 98, 0.3);
+}
+.oa-jelly-dropdown.blue-dpd[disabled] ul li:hover {
+  background-color: rgba(68, 133, 243, 0.2);
 }
 .oa-jelly-dropdown.blue-dpd .dpd-title {
   border-color: rgba(43, 108, 218, 0.7);
@@ -214,6 +252,9 @@
 .oa-jelly-dropdown.blue-dpd ul li:hover {
   background-color: rgba(78, 143, 253, 0.3);
 }
+.oa-jelly-dropdown.indigo-dpd[disabled] ul li:hover {
+  background-color: rgba(23, 124, 176, 0.2);
+}
 .oa-jelly-dropdown.indigo-dpd .dpd-title {
   border-color: rgba(0, 99, 151, 0.7);
   background-color: rgba(23, 124, 176, 0.15);
@@ -230,6 +271,9 @@
 }
 .oa-jelly-dropdown.indigo-dpd ul li:hover {
   background-color: rgba(33, 134, 186, 0.3);
+}
+.oa-jelly-dropdown.purple-dpd[disabled] ul li:hover {
+  background-color: rgba(103, 58, 183, 0.2);
 }
 .oa-jelly-dropdown.purple-dpd .dpd-title {
   border-color: rgba(78, 33, 158, 0.7);
@@ -248,6 +292,9 @@
 .oa-jelly-dropdown.purple-dpd ul li:hover {
   background-color: rgba(113, 68, 193, 0.3);
 }
+.oa-jelly-dropdown.gray-dpd[disabled] ul li:hover {
+  background-color: rgba(110, 110, 110, 0.2);
+}
 .oa-jelly-dropdown.gray-dpd .dpd-title {
   border-color: rgba(85, 85, 85, 0.7);
   background-color: rgba(110, 110, 110, 0.15);
@@ -264,6 +311,9 @@
 }
 .oa-jelly-dropdown.gray-dpd ul li:hover {
   background-color: rgba(120, 120, 120, 0.3);
+}
+.oa-jelly-dropdown.white-dpd[disabled] ul li:hover {
+  background-color: rgba(200, 200, 200, 0.2);
 }
 .oa-jelly-dropdown.white-dpd .dpd-title {
   border-color: rgba(175, 175, 175, 0.7);
