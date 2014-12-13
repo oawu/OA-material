@@ -10,11 +10,12 @@
   $.fn.extend ({
     OAjelly: function (opt) {
       var d4Opt = {
-        rippleColor: 'rgba(0, 0, 0, 0.15)'
+        rippleColor: 'rgba(0, 0, 0, 0.15)',
+        event: 'click'
       },
       init = function (opt) {
         $(this).addClass ('oa-jelly')
-        .click (function () {
+        .on (opt.event, function () {
           $(this).addClass ('oa-jelly-effect')
                  .bind ('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
                    $(this).removeClass ('oa-jelly-effect');

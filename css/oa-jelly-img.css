@@ -18,6 +18,13 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+.xxx:hover {
+  border: 1px solid red;
+}
+.xxx:hover ~ .xxx {
+  border: 1px solid blue;
+}
+
 .oa-jelly-img {
   position: relative;
   z-index: 1;
