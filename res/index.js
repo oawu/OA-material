@@ -12,6 +12,7 @@ ga('create', 'UA-46121102-7', 'auto');
 ga('send', 'pageview');
 
 $(function () {
+  
   $container = $('#container');
   $('#container > div').hide ();
 
@@ -27,18 +28,20 @@ $(function () {
 
   $('.item').each (function (i) {
     Path.map ("#d" + i).to (function () {
-      $container.children ().eq (i).show ().siblings ().hide ();
+      $container.children ().eq (i).fadeIn (function () {
+        $('.ripple-btn').OAripple ();
+        $('.jelly-ripple-btn').OAripple ().OAjelly ();
+      }).siblings ().fadeOut ();
+
     }).enter (function () {
-      $('#container > div').hide ();
+      $('#container > div').fadeOut ();
     });
   });
 
   Path.listen();
 
-  $('.ripple-btn').OAripple ();
   $('.jelly-btn').OAjelly ();
-  $('.jelly-ripple-btn').OAripple ().OAjelly ();
-  $('.oa-select').OAjellyDropdown ({ width: '220px'}).click (function () { $(this).siblings ().addClass ('dpd-closed'); })
+  $('.oa-select').OAjellyDropdown ({ width: '220px'}).click (function () { $(this).siblings ().addClass ('dpd-closed'); });
   $('.prettyprint').addClass ('linenums');
   prettyPrint ();
 });
