@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="zh-tw">
-    <title>OA-material button</title>
+    <title>OA-material Jelly Switch</title>
 
     <meta name="robots" content="index,follow" />
 
@@ -19,22 +19,25 @@
     <meta name="keywords" content="吳政賢 | OA Wu | OA-material | material | jQuery | javascript | scss | sass | html | css" />
     <meta name="author" content="吳政賢(OA Wu)" />
 
-    <link href="./css/frame.css" rel="stylesheet" type="text/css">
-    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+    <link href="../css/frame.css" rel="stylesheet" type="text/css">
+    <script src="../res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
 
-    <link href="./css/oa-button.css" rel="stylesheet" type="text/css">
+    <link href="../css/oa-jelly.css" rel="stylesheet" type="text/css">
+    <script src="../res/oa-jelly.js" language="javascript" type="text/javascript" /></script>
 
+    <link href="../css/oa-jelly-switch.css" rel="stylesheet" type="text/css">
     <style type="text/css">
-      .oa-btn {
+      .oa-jelly-switch {
+        margin-left: 10px;
         margin: 5px 10px;
       }
     </style>
   </head>
+
   <body lang="zh-tw">
-    <a href="javascript:history.back()">Back</a>
+    <a href="../">Back</a>
     <hr/>
     <div id='container'></div>
-
 
     <script type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -47,9 +50,17 @@
 
       $(function () {
         var btns = ['red', 'Pink', 'orange', 'deep-orange', 'yellow', 'amber', 'light-green', 'green', 'lime', 'teal', 'blue', 'light-blue', 'cyan', 'indigo', 'purple', 'deep-purple', 'brown', 'gray', 'blue-gray', 'white'];
+        var ebable = ['', '', 'disabled', 'disabled'];
+
         $('#container')
-          .append (btns.map (function (t, i) {
-            return [$('<button />').addClass ('oa-btn').addClass (t + '-btn').text ('Enable Button'), $('<button />').addClass ('oa-btn').addClass (t + '-btn').attr ('disabled', 'disabled').text ('Disable Button'), i % 2 ? $('<br />') : $('')];
+          .append (btns.map (function (t) {
+            return ebable.map (function (u, i) {
+              return $('<div />').addClass ('oa-jelly-switch').addClass (t + '-swh').addClass (i % 2 ? 'swh-full' : '')
+              .append ($('<input />').attr ('type', 'checkbox').attr ('id', 'swh-' + t + '-' + i).attr ('disabled', u.length ? 'disabled' : false))
+              .append ($('<span />').addClass ('swh-check'))
+              .append ($('<label />').attr ('for', 'swh-' + t + '-' + i).text (' ' + u + ' ' + (i % 2 ? 'fat' : 'thin') + ' switch'))
+              .append (i == 1 ? ' , ' : '');
+            }).concat ($('<br />'));
           }).reduce (function (p, n) { return p.concat (n) }));
       });
     </script>

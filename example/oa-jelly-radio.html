@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="zh-tw">
-    <title>OA-material Jelly Switch</title>
+    <title>OA-material Jelly Radio</title>
 
     <meta name="robots" content="index,follow" />
 
@@ -19,23 +19,26 @@
     <meta name="keywords" content="吳政賢 | OA Wu | OA-material | material | jQuery | javascript | scss | sass | html | css" />
     <meta name="author" content="吳政賢(OA Wu)" />
 
-    <link href="./css/frame.css" rel="stylesheet" type="text/css">
-    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+    <link href="../css/frame.css" rel="stylesheet" type="text/css">
+    <script src="../res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
 
-    <link href="./css/oa-jelly.css" rel="stylesheet" type="text/css">
-    <script src="./res/oa-jelly.js" language="javascript" type="text/javascript" /></script>
-
-    <link href="./css/oa-jelly-switch.css" rel="stylesheet" type="text/css">
+    <link href="../css/oa-jelly-radio.css" rel="stylesheet" type="text/css">
     <style type="text/css">
-      .oa-jelly-switch {
-        margin-left: 10px;
-        margin: 5px 10px;
+      .group {
+        display: inline-block;
+        width: 200px;
+        padding: 5px;
+        text-align: center;
+        margin: 5px auto;
+      }
+      .oa-jelly-radio {
+        margin: 3px 0;
       }
     </style>
   </head>
 
   <body lang="zh-tw">
-    <a href="javascript:history.back()">Back</a>
+    <a href="../">Back</a>
     <hr/>
     <div id='container'></div>
 
@@ -50,17 +53,20 @@
 
       $(function () {
         var btns = ['red', 'Pink', 'orange', 'deep-orange', 'yellow', 'amber', 'light-green', 'green', 'lime', 'teal', 'blue', 'light-blue', 'cyan', 'indigo', 'purple', 'deep-purple', 'brown', 'gray', 'blue-gray', 'white'];
-        var ebable = ['', '', 'disabled', 'disabled'];
-
         $('#container')
-          .append (btns.map (function (t) {
-            return ebable.map (function (u, i) {
-              return $('<div />').addClass ('oa-jelly-switch').addClass (t + '-swh').addClass (i % 2 ? 'swh-full' : '')
-              .append ($('<input />').attr ('type', 'checkbox').attr ('id', 'swh-' + t + '-' + i).attr ('disabled', u.length ? 'disabled' : false))
-              .append ($('<span />').addClass ('swh-check'))
-              .append ($('<label />').attr ('for', 'swh-' + t + '-' + i).text (' ' + u + ' ' + (i % 2 ? 'fat' : 'thin') + ' switch'))
-              .append (i == 1 ? ' , ' : '');
-            }).concat ($('<br />'));
+          .append (
+            btns.map (function (t) {
+            return [
+              $('<div />').addClass ('group').append (
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo').append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 1).attr ('name', t + '-rdo').attr ('checked', 'checked')).append ($('<span />').addClass ('rdo-check')).append (' ').append ($('<label />').attr ('for', t + '-rdo-' + 1).text ('radio1 at left')),
+                $('<br />'),
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo').append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 2).attr ('name', t + '-rdo')).append ($('<span />').addClass ('rdo-check')).append (' ').append ($('<label />').attr ('for', t + '-rdo-' + 2).text ('radio2 at left')),
+                $('<br />'),
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo').append ($('<label />').attr ('for', t + '-rdo-' + 3).text ('radio3 at right')).append (' ').append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 3).attr ('name', t + '-rdo')).append ($('<span />').addClass ('rdo-check')),
+                $('<br />'),
+                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo').append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 4).attr ('name', t + '-rdo').attr ('disabled', 'disabled')).append ($('<span />').addClass ('rdo-check')).append (' ').append ($('<label />').attr ('for', t + '-rdo-' + 4).text ('radio4 disable'))
+              )
+            ];
           }).reduce (function (p, n) { return p.concat (n) }));
       });
     </script>

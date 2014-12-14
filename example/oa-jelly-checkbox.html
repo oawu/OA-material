@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="zh-tw">
-    <title>OA-material Jelly Radio</title>
+    <title>OA-material Jelly Checkbox</title>
 
     <meta name="robots" content="index,follow" />
 
@@ -19,10 +19,10 @@
     <meta name="keywords" content="吳政賢 | OA Wu | OA-material | material | jQuery | javascript | scss | sass | html | css" />
     <meta name="author" content="吳政賢(OA Wu)" />
 
-    <link href="./css/frame.css" rel="stylesheet" type="text/css">
-    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+    <link href="../css/frame.css" rel="stylesheet" type="text/css">
+    <script src="../res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
 
-    <link href="./css/oa-jelly-radio.css" rel="stylesheet" type="text/css">
+    <link href="../css/oa-jelly-checkbox.css" rel="stylesheet" type="text/css">
     <style type="text/css">
       .group {
         display: inline-block;
@@ -31,14 +31,14 @@
         text-align: center;
         margin: 5px auto;
       }
-      .oa-jelly-radio {
-        margin: 3px 0;
+      .oa-jelly-checkbox {
+        margin: 2px auto;
       }
     </style>
   </head>
 
   <body lang="zh-tw">
-    <a href="javascript:history.back()">Back</a>
+    <a href="../">Back</a>
     <hr/>
     <div id='container'></div>
 
@@ -58,30 +58,14 @@
             btns.map (function (t) {
             return [
               $('<div />').addClass ('group').append (
-                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 1).attr ('name', t + '-rdo').attr ('checked', 'checked'))
-                  .append ($('<span />').addClass ('rdo-check'))
-                  .append (' ')
-                  .append ($('<label />').attr ('for', t + '-rdo-' + 1).text ('radio1 at left')),
+                $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb').append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 1).attr ('name', t + '-ckb').attr ('checked', 'checked')).append ($('<span />').addClass ('ckb-check')).append (' ').append ($('<label />').attr ('for', t + '-ckb-' + 1).text ('radio1 at left')),
                 $('<br />'),
-                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 2).attr ('name', t + '-rdo'))
-                  .append ($('<span />').addClass ('rdo-check'))
-                  .append (' ')
-                  .append ($('<label />').attr ('for', t + '-rdo-' + 2).text ('radio2 at left')),
+                $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb').append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 2).attr ('name', t + '-ckb')).append ($('<span />').addClass ('ckb-check')).append (' ').append ($('<label />').attr ('for', t + '-ckb-' + 2).text ('radio2 at left')),
                 $('<br />'),
-                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                  .append ($('<label />').attr ('for', t + '-rdo-' + 3).text ('radio3 at right'))
-                  .append (' ')
-                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 3).attr ('name', t + '-rdo'))
-                  .append ($('<span />').addClass ('rdo-check')),
+                $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb').append ($('<label />').attr ('for', t + '-ckb-' + 3).text ('radio3 at right')).append (' ').append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 3).attr ('name', t + '-ckb')).append ($('<span />').addClass ('ckb-check')),
                 $('<br />'),
-                $('<div />').addClass ('oa-jelly-radio').addClass (t + '-rdo')
-                  .append ($('<input />').attr ('type', 'radio').attr ('id', t + '-rdo-' + 4).attr ('name', t + '-rdo').attr ('disabled', 'disabled'))
-                  .append ($('<span />').addClass ('rdo-check'))
-                  .append (' ')
-                  .append ($('<label />').attr ('for', t + '-rdo-' + 4).text ('radio4 disable'))
-              )
+                $('<div />').addClass ('oa-jelly-checkbox').addClass (t + '-ckb').append ($('<input />').attr ('type', 'checkbox').attr ('id', t + '-ckb-' + 4).attr ('name', t + '-ckb').attr ('disabled', 'disabled')).append ($('<span />').addClass ('ckb-check')).append (' ').append ($('<label />').attr ('for', t + '-ckb-' + 4).text ('radio4 disable'))
+                )
             ];
           }).reduce (function (p, n) { return p.concat (n) }));
       });
