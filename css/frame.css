@@ -20,7 +20,7 @@
  */
 @font-face {
   font-family: "Monaco";
-  src: url('/font/monaco/monaco.ttf?1417744269') format('truetype'), url('/font/monaco/monaco.otf?1417744269') format('opentype');
+  src: url('/OA-material/font/monaco/monaco.ttf?1418126668') format('truetype'), url('/OA-material/font/monaco/monaco.otf?1418126668') format('opentype');
 }
 * {
   vertical-align: top;
