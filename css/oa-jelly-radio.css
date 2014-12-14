@@ -43,7 +43,7 @@
   border-color: rgba(0, 0, 0, 0.1);
 }
 .oa-jelly-radio input[type='radio'] ~ .rdo-check {
-  border: 1px solid red;
+  border: 1px solid transparent;
   position: relative;
   display: inline-block;
   z-index: 0;
@@ -62,6 +62,7 @@
   display: inline-block;
   margin: 0;
   pointer-events: none;
+  background-color: silver;
   top: 50%;
   left: 50%;
   width: 0;
@@ -83,9 +84,9 @@
   left: 2px;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
-  -moz-animation: jelly 0.75s ease-out;
-  -webkit-animation: jelly 0.75s ease-out;
-  animation: jelly 0.75s ease-out;
+  -moz-animation: rdo-jelly 0.75s ease-out;
+  -webkit-animation: rdo-jelly 0.75s ease-out;
+  animation: rdo-jelly 0.75s ease-out;
 }
 .oa-jelly-radio.red-rdo input[type='radio'] ~ .rdo-check {
   border: solid 2px rgba(144, 0, 0, 0.2);
@@ -208,7 +209,7 @@
   background-color: #c8c8c8;
 }
 
-@-moz-keyframes jelly {
+@-moz-keyframes rdo-jelly {
   0% {
     -moz-transform: scale(1, 1);
     transform: scale(1, 1);
@@ -229,7 +230,7 @@
     opacity: 1;
   }
 }
-@-webkit-keyframes jelly {
+@-webkit-keyframes rdo-jelly {
   0% {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
@@ -250,7 +251,7 @@
     opacity: 1;
   }
 }
-@keyframes jelly {
+@keyframes rdo-jelly {
   0% {
     -moz-transform: scale(1, 1);
     -ms-transform: scale(1, 1);

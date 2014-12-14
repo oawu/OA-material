@@ -65,6 +65,7 @@ $tickBorderWidth: $checkboxWidth / 3;
         width: $tickWidth;
         height: $tickHeight;
         border: $borderWidth solid transparent;
+        border-color: rgba(192, 192, 192, 1);
         border-width: 0 $tickBorderWidth $tickBorderWidth 0;
 
         @include simple-transform(1, 0, 0, 0, 0, 0, 0, 0);
@@ -77,13 +78,14 @@ $tickBorderWidth: $checkboxWidth / 3;
 
     &:checked {
       &~.ckb-check {
-        @include animation(jelly .2s ease-out);
+        @include animation(ckb-jelly .2s ease-out);
         &:after {
           width: $tickWidth;
           height: $tickHeight;
+
           @include opacity(1);
           @include border-radius($checkboxWidth / 5);
-          @include box-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+          @include box-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
           @include simple-transform(1, 45deg, $tickWidth / 4, 0 - $tickWidth, 0, 0, 0, 0);
         }
       }
@@ -113,7 +115,7 @@ $tickBorderWidth: $checkboxWidth / 3;
     }
   }
 }
-@include keyframes(jelly) {
+@include keyframes(ckb-jelly) {
   0% {
     @include scale(1);
   }

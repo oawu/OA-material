@@ -60,7 +60,7 @@
         $div.addClass ('oa-jelly-dropdown').css ({'width': opt.width}).append ($hidden).append ($title).append ($('<ul />').append ($li));
 
         if (!opt.autoOpen) $div.addClass ('dpd-closed');
-        if (opt.color) $div.addClass (opt.color + '-dpd');
+        if (opt.color) $div.addClass (opt.color);
 
         $this.replaceWith ($div);
         if (opt.isRipple && !$div.attr ('disabled')) $title.OAripple ();

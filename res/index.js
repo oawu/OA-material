@@ -11,4 +11,34 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-46121102-7', 'auto');
 ga('send', 'pageview');
 
-$(function () { });
+$(function () {
+  $container = $('#container');
+  $('#container > div').hide ();
+
+  $('.navbar').OAnavbar ();
+
+  $('.item').click (function () {
+    $(this).addClass ('active').siblings ().removeClass ('active');
+    window.location.assign ('#d' + $(this).index ());
+  });
+
+  var $active = $('.item').filter ('.active');
+  $active.length ? $active.click () : $('.item').eq (!location.hash ? 0 : location.hash.slice (location.hash.indexOf ('d') + 1)).click ();
+
+  $('.item').each (function (i) {
+    Path.map ("#d" + i).to (function () {
+      $container.children ().eq (i).show ().siblings ().hide ();
+    }).enter (function () {
+      $('#container > div').hide ();
+    });
+  });
+
+  Path.listen();
+
+  $('.ripple-btn').OAripple ();
+  $('.jelly-btn').OAjelly ();
+  $('.jelly-ripple-btn').OAripple ().OAjelly ();
+  $('.oa-select').OAjellyDropdown ({ width: '220px'}).click (function () { $(this).siblings ().addClass ('dpd-closed'); })
+  $('.prettyprint').addClass ('linenums');
+  prettyPrint ();
+});

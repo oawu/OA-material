@@ -18,3 +18,116 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+html body #container > div .about {
+  padding: 0;
+  padding-top: 30px;
+}
+html body #container > div .about .info + .info {
+  margin-top: 2px;
+}
+html body #container > div .about .info .key, html body #container > div .about .info .value {
+  display: inline-block;
+  padding: 5px;
+  float: left;
+  width: 150px;
+  text-align: right;
+  letter-spacing: 1px;
+}
+html body #container > div .about .info .key {
+  letter-spacing: 4px;
+}
+html body #container > div .about .info .key:after {
+  content: ":";
+}
+html body #container > div .about .info .value {
+  text-align: left;
+  width: calc(100% - 150px - 10px * 2);
+}
+html body #container > div .oa-select {
+  display: inline-block;
+  margin: 3px;
+}
+html body #container > div h1 {
+  border-bottom: 1px solid rgba(162, 162, 162, 0.7);
+}
+html body #container > div h2 {
+  border-bottom: 1px solid rgba(162, 162, 162, 0.4);
+}
+html body #container > div h3 {
+  border-bottom: 1px solid rgba(162, 162, 162, 0.1);
+}
+html body #container > div h4 {
+  border-bottom: 1px solid rgba(162, 162, 162, 0);
+}
+html body #container > div h5 {
+  border-bottom: 1px solid rgba(162, 162, 162, 0);
+}
+html body #container > div h2:not(:first-child) {
+  margin-top: 50px;
+}
+html body #container > div pre {
+  font-size: 13px;
+  margin-top: 5px;
+  overflow: hidden;
+  word-break: normal;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+}
+html body #container > div pre.tag {
+  display: inline-block;
+  padding: 3px 5px;
+  line-height: 12px;
+  margin-top: 1px;
+  border: 1px solid #f9cc9d;
+  background-color: rgba(249, 204, 157, 0.5);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+html body #container > div pre.tag.path {
+  border: 1px solid #8cb5c0;
+  background-color: rgba(140, 181, 192, 0.5);
+}
+html body #footer {
+  margin: 100px auto;
+  width: 960px;
+}
+html body #footer .description {
+  position: relative;
+  text-align: center;
+}
+html body #footer .description .divider {
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  width: 100%;
+  height: 2px;
+  background: url(data:image/gif;base64,R0lGODlhAgACAIAAAP///8nJySH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MjhCMDc2ODA2RDgxMUUyQTMzM0ExMUI2QUUxMTc4NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MjhCMDc2OTA2RDgxMUUyQTMzM0ExMUI2QUUxMTc4NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQyOEIwNzY2MDZEODExRTJBMzMzQTExQjZBRTExNzg3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQyOEIwNzY3MDZEODExRTJBMzMzQTExQjZBRTExNzg3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAIAAgAAAgNMAAUAOw==) repeat-x center center;
+}
+html body #footer .description .content {
+  background-color: #e9eaed;
+  display: inline-block;
+  margin: 0 auto;
+  z-index: 0;
+  padding: 5px 10px;
+  background: #e9eaed;
+}
+html body #footer .description .content.top {
+  color: #788296;
+}
+html body #footer .description .content.bottom {
+  color: #5a6478;
+}
+html body #footer .description .content.bottom key {
+  color: #555;
+}
+html body #footer .description .content.bottom a {
+  font-weight: bold;
+}

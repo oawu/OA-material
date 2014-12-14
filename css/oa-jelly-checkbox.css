@@ -70,6 +70,7 @@
   width: 10.66667px;
   height: 21.33333px;
   border: 2px solid transparent;
+  border-color: silver;
   border-width: 0 5.33333px 5.33333px 0;
   -moz-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
   -ms-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
@@ -93,9 +94,9 @@
   transition: all 0.4s ease-in-out;
 }
 .oa-jelly-checkbox input[type='checkbox']:checked ~ .ckb-check {
-  -moz-animation: jelly 0.2s ease-out;
-  -webkit-animation: jelly 0.2s ease-out;
-  animation: jelly 0.2s ease-out;
+  -moz-animation: ckb-jelly 0.2s ease-out;
+  -webkit-animation: ckb-jelly 0.2s ease-out;
+  animation: ckb-jelly 0.2s ease-out;
 }
 .oa-jelly-checkbox input[type='checkbox']:checked ~ .ckb-check:after {
   width: 10.66667px;
@@ -105,9 +106,9 @@
   -moz-border-radius: 3.2px;
   -webkit-border-radius: 3.2px;
   border-radius: 3.2px;
-  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   -moz-transform:  scale(1, 1) rotateZ(45deg) translate(2.66667px, -10.66667px) skew(0, 0);
   -ms-transform:  scale(1, 1) rotateZ(45deg) translate(2.66667px, -10.66667px) skew(0, 0);
   -webkit-transform:  scale(1, 1) rotateZ(45deg) translate(2.66667px, -10.66667px) skew(0, 0);
@@ -358,7 +359,7 @@
   border-color: #c8c8c8;
 }
 
-@-moz-keyframes jelly {
+@-moz-keyframes ckb-jelly {
   0% {
     -moz-transform: scale(1, 1);
     transform: scale(1, 1);
@@ -380,7 +381,7 @@
     transform: scale(1, 1);
   }
 }
-@-webkit-keyframes jelly {
+@-webkit-keyframes ckb-jelly {
   0% {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
@@ -402,7 +403,7 @@
     transform: scale(1, 1);
   }
 }
-@keyframes jelly {
+@keyframes ckb-jelly {
   0% {
     -moz-transform: scale(1, 1);
     -ms-transform: scale(1, 1);

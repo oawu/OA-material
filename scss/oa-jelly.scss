@@ -18,10 +18,10 @@
 
   @include scale(1);
   &.oa-jelly-effect {
-    @include animation(jelly .2s ease-out);
+    @include animation(oa-jelly .2s ease-out);
   }
 }
-@include keyframes(jelly) {
+@include keyframes(oa-jelly) {
   0% {
     @include scale(1);
   }
