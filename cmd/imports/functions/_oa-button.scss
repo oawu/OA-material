@@ -14,6 +14,7 @@
   padding: 5px 15px;
   font-weight: bolder;
 
+  @include scale(1);
   @include border-radius(2px);
   @include text-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
 
@@ -29,6 +30,9 @@
   }
   @include transition(box-shadow color .3s cubic-bezier(.4, 0, .2, 1));
 
+  &.jelly-effect {
+    @include animation(jelly-effect .2s ease-out);
+  }
   &[disabled] {
     color: rgba(255, 255, 255, 0.75);
     cursor: not-allowed;
@@ -64,11 +68,28 @@
   }
 
   $value: map-get($btns, $color);
-  background-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
-  &:hover {
-    background-color: rgba(nth($value, 1) - 10, nth($value, 2) - 10,nth($value, 3) - 10, 1);
+  @if($value){
+    background-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
+    &:hover {
+      background-color: rgba(nth($value, 1) - 10, nth($value, 2) - 10,nth($value, 3) - 10, 1);
+    }
+    &[disabled] {
+      background-color: rgba(nth($value, 1) + 10, nth($value, 2) + 10, nth($value, 3) + 10, 0.85);
+    }
   }
-  &[disabled] {
-    background-color: rgba(nth($value, 1) + 10, nth($value, 2) + 10, nth($value, 3) + 10, 0.85);
+  
+  @include keyframes(jelly-effect) {
+    0% {
+      @include scale(1);
+    }
+    30% {
+      @include scale(1.1);
+    }
+    80% {
+      @include scale(0.9);
+    }
+    100% {
+      @include scale(1);
+    }
   }
 }

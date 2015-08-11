@@ -1,0 +1,44 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+
+@import "_oa";
+
+
+html {
+  body {
+    #container {
+      .area {
+        @include clearfix();
+
+        h2 {
+          text-align: left;
+          padding-bottom: 5px;
+          padding-left: 5px;
+          margin-bottom: 5px;
+          border-bottom: 3px solid rgba(39, 40, 34, .1);
+        }
+
+        >:not(h2) {
+          float: left;
+        }
+
+        button {
+
+          $names: ('pure', 'red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple');
+          @for $i from 1 through 8 {
+            &:nth-child(#{$i + 1}) {
+              @include button(nth($names, $i));
+              margin: 5px;
+            }
+          }
+        }
+
+        .radio {
+          
+        }
+      }
+    }
+  }
+}
