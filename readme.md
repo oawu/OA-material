@@ -1,5 +1,5 @@
-# Welcome To OA's material!
-這是一個 based on [jQuery](http://jquery.com/)、[scss、sass](http://compass-style.org/) 的前端 library 以及 material 風格的 UI 設計。 
+# Welcome To OA's F2E Framework!
+OA 個人常用的前端工具總集合！ 
 
 ---
 ## 聲明
@@ -8,16 +8,7 @@
 
 <br/>
 ## 簡介
-* 這是一個前端 jQuery extend function 以及 material 風格的 UI 設計，主要架構於 [jQuery](http://jquery.com/)以及[scss、sass](http://compass-style.org/)。  
-
-* 開發者可自行設定 **scss變數**、js extend **options** 來更換樣式。
-
-* Demo 範例頁面: [http://comdan66.github.io/OA-material/](http://comdan66.github.io/OA-material/)
-
-<br/>
-## 使用
-* Demo 範例頁面會有詳細解說: [http://comdan66.github.io/OA-material/](http://comdan66.github.io/OA-material/)
-![demo](img/readme.png)
+* 個人習慣工具，有興趣的參考吧！
 
 <br/>
 ## 關於
@@ -25,12 +16,10 @@
 
 * E-mail - <comdan66@gmail.com>
 
-* 作品名稱 - OA-material
+* 作品名稱 - OA's F2E Framework
 
-* 最新版本 - 1.0.1
+* 最新版本 - 1.2
 
-* GitHub - [OA-material](https://github.com/comdan66/OA-material)
+* GitHub - [OA's F2E Framework](https://github.com/comdan66/oaf2e/)
 
-* Reference - [Tedshd's GitHub](https://github.com/tedshd/material_design_for_web)
-
-* 更新日期 - 2014/12/14
+* 更新日期 - 2015/05/26

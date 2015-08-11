@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>OA-material</title>
+
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:site_name" content="OA's GitHub" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="http://comdan66.github.io/OA-material/img/og.png" />
+    <meta property="og:title" content="OA-material" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:description" content="這是一個前端 jQuery extend function 以及 material 風格的 UI 設計，主要架構於 jQuery以及scss、sass。 開發者可自行設定 scss變數、js extend options 來更換樣式。 Demo 範例頁面: http://comdan66.github.io/OA-material/ ..." />
+    <meta property="og:url" content="http://comdan66.github.io/OA-material/" />
+
+    <meta name="description" content="這是一個前端 jQuery extend function 以及 material 風格的 UI 設計，主要架構於 jQuery以及scss、sass。 開發者可自行設定 scss變數、js extend options 來更換樣式。 Demo 範例頁面: http://comdan66.github.io/OA-material/ ..." />
+    <meta name="keywords" content="吳政賢 | OA Wu | OA-material | material | jQuery | javascript | scss | sass | html | css" />
+    <meta name="author" content="吳政賢(OA Wu)" />
+
+    <link href="./css/frame.css" rel="stylesheet" type="text/css">
+    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+    <script src="./res/pathjs_v0.8.4/path.min.js" language="javascript" type="text/javascript" /></script>
+
+    <link href="./res/prettify/prettify.css" rel="stylesheet" type="text/css">
+    <script src="./res/prettify/prettify.js" language="javascript" type="text/javascript" /></script>
+
+    <link href="./css/oa-navbar.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-navbar.js" language="javascript" type="text/javascript" /></script>
+
+    <link href="./css/oa-button.css" rel="stylesheet" type="text/css">
+
+    <link href="./css/oa-jelly.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-jelly.js" language="javascript" type="text/javascript" /></script>
+
+    <link href="./css/oa-ripple.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-ripple.js" language="javascript" type="text/javascript" /></script>
+    
+    <link href="./css/oa-jelly-radio.css" rel="stylesheet" type="text/css">
+    <link href="./css/oa-jelly-checkbox.css" rel="stylesheet" type="text/css">
+    <link href="./css/oa-jelly-switch.css" rel="stylesheet" type="text/css">
+
+    <link href="./css/oa-jelly-select.css" rel="stylesheet" type="text/css">
+    <script src="./res/oa-jelly-select.js" language="javascript" type="text/javascript" /></script>
+
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
+    <script src="./res/index.js" language="javascript" type="text/javascript" /></script>
+
+  </head>
+  <body lang="zh-tw">
+
+    <div class='navbar'>
+      <div class='item'>index</div>
+      <div class='item'>button</div>
+      <div class='item'>radio</div>
+      <div class='item'>checkbox</div>
+      <div class='item'>select</div>
+      <div class='item'>switch</div>
+      <div class='item'>about</div>
+    </div>
+
+      
+    <div id='container'>
+      <div>
+        <h2>Button</h2>
+        <button class='oa-btn pure-btn jelly-ripple-btn'>Button</button>
+        <button class='oa-btn red-btn jelly-ripple-btn'>Button</button>
+        <button class='oa-btn orange-btn jelly-ripple-btn'>Button</button>
+        <button class='oa-btn yellow-btn jelly-ripple-btn'>Button</button>
+        <button class='oa-btn green-btn jelly-ripple-btn'>Button</button>
+        <button class='oa-btn blue-btn jelly-ripple-btn'>Button</button>
+        <button class='oa-btn cyan-btn jelly-ripple-btn'>Button</button>
+        <button class='oa-btn purple-btn jelly-ripple-btn'>Button</button>
+
+        <h2>Radio</h2>
+        <div class="oa-jelly-radio pure-rdo"><input type="radio" id="pure-rdo-1" name="rdo" checked><span class="rdo-check"></span> <label for="pure-rdo-1">Item 1</label></div>
+        <div class="oa-jelly-radio red-rdo"><input type="radio" id="red-rdo-1" name="rdo"><span class="rdo-check"></span> <label for="red-rdo-1">Item 2</label></div>
+        <div class="oa-jelly-radio orange-rdo"><input type="radio" id="orange-rdo-1" name="rdo"><span class="rdo-check"></span> <label for="orange-rdo-1">Item 3</label></div>
+        <div class="oa-jelly-radio yellow-rdo"><input type="radio" id="yellow-rdo-1" name="rdo"><span class="rdo-check"></span> <label for="yellow-rdo-1">Item 4</label></div>
+        <div class="oa-jelly-radio green-rdo"><input type="radio" id="green-rdo-1" name="rdo"><span class="rdo-check"></span> <label for="green-rdo-1">Item 5</label></div>
+        <div class="oa-jelly-radio blue-rdo"><input type="radio" id="blue-rdo-1" name="rdo"><span class="rdo-check"></span> <label for="blue-rdo-1">Item 6</label></div>
+        <div class="oa-jelly-radio cyan-rdo"><input type="radio" id="cyan-rdo-1" name="rdo"><span class="rdo-check"></span> <label for="cyan-rdo-1">Item 7</label></div>
+        <div class="oa-jelly-radio purple-rdo"><input type="radio" id="purple-rdo-1" name="rdo"><span class="rdo-check"></span> <label for="purple-rdo-1">Item 8</label></div>
+
+        <h2>Checkbox</h2>
+        <div class="oa-jelly-checkbox pure-ckb"><input type="checkbox" id="pure-ckb-1" checked><span class="ckb-check"></span> <label for="pure-ckb-1">Item 1</label></div>
+        <div class="oa-jelly-checkbox red-ckb"><input type="checkbox" id="red-ckb-1" checked><span class="ckb-check"></span> <label for="red-ckb-1">Item 2</label></div>
+        <div class="oa-jelly-checkbox orange-ckb"><input type="checkbox" id="orange-ckb-1" checked><span class="ckb-check"></span> <label for="orange-ckb-1">Item 3</label></div>
+        <div class="oa-jelly-checkbox yellow-ckb"><input type="checkbox" id="yellow-ckb-1" checked><span class="ckb-check"></span> <label for="yellow-ckb-1">Item 4</label></div>
+        <div class="oa-jelly-checkbox green-ckb"><input type="checkbox" id="green-ckb-1"><span class="ckb-check"></span> <label for="green-ckb-1">Item 5</label></div>
+        <div class="oa-jelly-checkbox blue-ckb"><input type="checkbox" id="blue-ckb-1"><span class="ckb-check"></span> <label for="blue-ckb-1">Item 6</label></div>
+        <div class="oa-jelly-checkbox cyan-ckb"><input type="checkbox" id="cyan-ckb-1"><span class="ckb-check"></span> <label for="cyan-ckb-1">Item 7</label></div>
+        <div class="oa-jelly-checkbox purple-ckb"><input type="checkbox" id="purple-ckb-1"><span class="ckb-check"></span> <label for="purple-ckb-1">Item 8</label></div>
+
+        <h2>Select</h2>
+        <select class="oa-select pure-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select red-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select orange-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select yellow-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select green-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select blue-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select cyan-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select purple-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+      
+        <h2>Switch</h2>
+        <h3>Thin Switch</h3>
+        <div class="oa-jelly-switch pure-swh"><input type="checkbox" id="swh-pure-1" checked><span class="swh-check"></span> <label for="swh-pure-1">Setting 1</label></div>
+        <div class="oa-jelly-switch red-swh"><input type="checkbox" id="swh-red-1" checked><span class="swh-check"></span> <label for="swh-red-1">Setting 2</label></div>
+        <div class="oa-jelly-switch orange-swh"><input type="checkbox" id="swh-orange-1"><span class="swh-check"></span> <label for="swh-orange-1">Setting 3</label></div>
+        <div class="oa-jelly-switch yellow-swh"><input type="checkbox" id="swh-yellow-1"><span class="swh-check"></span> <label for="swh-yellow-1">Setting 4</label></div>
+        <br />
+        <div class="oa-jelly-switch green-swh"><input type="checkbox" id="swh-green-1" checked><span class="swh-check"></span> <label for="swh-green-1">Setting 5</label></div>
+        <div class="oa-jelly-switch blue-swh"><input type="checkbox" id="swh-blue-1" checked><span class="swh-check"></span> <label for="swh-blue-1">Setting 6</label></div>
+        <div class="oa-jelly-switch cyan-swh"><input type="checkbox" id="swh-cyan-1"><span class="swh-check"></span> <label for="swh-cyan-1">Setting 7</label></div>
+        <div class="oa-jelly-switch purple-swh"><input type="checkbox" id="swh-purple-1"><span class="swh-check"></span> <label for="swh-purple-1">Setting 8</label></div>
+        <h3>Full Switch</h3>
+        <div class="oa-jelly-switch pure-swh swh-full"><input type="checkbox" id="swh-pure-2" checked><span class="swh-check"></span> <label for="swh-pure-2">Setting 1</label></div>
+        <div class="oa-jelly-switch red-swh swh-full"><input type="checkbox" id="swh-red-2" checked><span class="swh-check"></span> <label for="swh-red-2">Setting 2</label></div>
+        <div class="oa-jelly-switch orange-swh swh-full"><input type="checkbox" id="swh-orange-2"><span class="swh-check"></span> <label for="swh-orange-2">Setting 3</label></div>
+        <div class="oa-jelly-switch yellow-swh swh-full"><input type="checkbox" id="swh-yellow-2"><span class="swh-check"></span> <label for="swh-yellow-2">Setting 4</label></div>
+        <br />
+        <div class="oa-jelly-switch green-swh swh-full"><input type="checkbox" id="swh-green-2" checked><span class="swh-check"></span> <label for="swh-green-2">Setting 5</label></div>
+        <div class="oa-jelly-switch blue-swh swh-full"><input type="checkbox" id="swh-blue-2" checked><span class="swh-check"></span> <label for="swh-blue-2">Setting 6</label></div>
+        <div class="oa-jelly-switch cyan-swh swh-full"><input type="checkbox" id="swh-cyan-2"><span class="swh-check"></span> <label for="swh-cyan-2">Setting 7</label></div>
+        <div class="oa-jelly-switch purple-swh swh-full"><input type="checkbox" id="swh-purple-2"><span class="swh-check"></span> <label for="swh-purple-2">Setting 8</label></div>
+      </div>
+
+      <div>
+        <h2>一般</h2>
+        加入 css
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-button.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;button class='oa-btn'&gt;Button&lt;/button&gt;
+  &lt;button class='oa-btn red-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn orange-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn yellow-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn green-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn blue-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn cyan-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn purple-btn'&gt;Color Button&lt;/button&gt;
+</pre>
+<br />
+        效果
+<br />
+<button class='oa-btn pure-btn'>Button</button>
+<button class='oa-btn red-btn'>Button</button>
+<button class='oa-btn orange-btn'>Button</button>
+<button class='oa-btn yellow-btn'>Button</button>
+<button class='oa-btn green-btn'>Button</button>
+<button class='oa-btn blue-btn'>Button</button>
+<button class='oa-btn cyan-btn'>Button</button>
+<button class='oa-btn purple-btn'>Button</button>
+        <h2>水波紋</h2>
+        加入 css、js
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-ripple.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+  &lt;script src=&quot;oa-ripple.js&quot; language=&quot;javascript&quot; type=&quot;text/javascript&quot; /&gt;&lt;/script&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;button class='oa-btn'&gt;Button&lt;/button&gt;
+  &lt;button class='oa-btn red-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn orange-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn yellow-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn green-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn blue-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn cyan-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn purple-btn'&gt;Color Button&lt;/button&gt;
+</pre>
+<br />
+        Javascript 寫法
+<pre class='javascript prettyprint' data-path='javascript'>
+  $('.oa-btn').OAripple ();
+</pre>
+<br />
+        效果
+<br />
+<button class='oa-btn pure-btn ripple-btn'>Button</button>
+<button class='oa-btn red-btn ripple-btn'>Button</button>
+<button class='oa-btn orange-btn ripple-btn'>Button</button>
+<button class='oa-btn yellow-btn ripple-btn'>Button</button>
+<button class='oa-btn green-btn ripple-btn'>Button</button>
+<button class='oa-btn blue-btn ripple-btn'>Button</button>
+<button class='oa-btn cyan-btn ripple-btn'>Button</button>
+<button class='oa-btn purple-btn ripple-btn'>Button</button>
+        <h2>果凍效果</h2>
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-jelly.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+  &lt;script src=&quot;oa-jelly.js&quot; language=&quot;javascript&quot; type=&quot;text/javascript&quot; /&gt;&lt;/script&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;button class='oa-btn'&gt;Button&lt;/button&gt;
+  &lt;button class='oa-btn red-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn orange-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn yellow-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn green-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn blue-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn cyan-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn purple-btn'&gt;Color Button&lt;/button&gt;
+</pre>
+<br />
+        Javascript 寫法
+<pre class='javascript prettyprint' data-path='javascript'>
+  $('.oa-btn').OAjelly ();
+</pre>
+<br />
+        效果
+<br />
+<button class='oa-btn pure-btn jelly-btn'>Button</button>
+<button class='oa-btn red-btn jelly-btn'>Button</button>
+<button class='oa-btn orange-btn jelly-btn'>Button</button>
+<button class='oa-btn yellow-btn jelly-btn'>Button</button>
+<button class='oa-btn green-btn jelly-btn'>Button</button>
+<button class='oa-btn blue-btn jelly-btn'>Button</button>
+<button class='oa-btn cyan-btn jelly-btn'>Button</button>
+<button class='oa-btn purple-btn jelly-btn'>Button</button>
+        <h2>水波紋效果</h2>
+        加入 css、js
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-ripple.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+  &lt;link href=&quot;oa-jelly.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+
+  &lt;script src=&quot;oa-ripple.js&quot; language=&quot;javascript&quot; type=&quot;text/javascript&quot; /&gt;&lt;/script&gt;
+  &lt;script src=&quot;oa-jelly.js&quot; language=&quot;javascript&quot; type=&quot;text/javascript&quot; /&gt;&lt;/script&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;button class='oa-btn'&gt;Button&lt;/button&gt;
+  &lt;button class='oa-btn red-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn orange-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn yellow-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn green-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn blue-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn cyan-btn'&gt;Color Button&lt;/button&gt;
+  &lt;button class='oa-btn purple-btn'&gt;Color Button&lt;/button&gt;
+</pre>
+<br />
+        Javascript 寫法
+<pre class='javascript prettyprint' data-path='javascript'>
+  $('.oa-btn').OAripple ().OAjelly ();
+</pre>
+<br />
+        效果
+<br />
+<button class='oa-btn pure-btn jelly-ripple-btn'>Button</button>
+<button class='oa-btn red-btn jelly-ripple-btn'>Button</button>
+<button class='oa-btn orange-btn jelly-ripple-btn'>Button</button>
+<button class='oa-btn yellow-btn jelly-ripple-btn'>Button</button>
+<button class='oa-btn green-btn jelly-ripple-btn'>Button</button>
+<button class='oa-btn blue-btn jelly-ripple-btn'>Button</button>
+<button class='oa-btn cyan-btn jelly-ripple-btn'>Button</button>
+<button class='oa-btn purple-btn jelly-ripple-btn'>Button</button>
+        <h2>顏色</h2>
+        目前預設的顏色有以下 <pre class='tag'>red-btn</pre>、<pre class='tag'>Pink-btn</pre>、<pre class='tag'>orange-btn</pre>、<pre class='tag'>deep-orange-btn</pre>、<pre class='tag'>yellow-btn</pre>、<pre class='tag'>amber-btn</pre>、<pre class='tag'>light-green-btn</pre>、<pre class='tag'>green-btn</pre>、<pre class='tag'>lime-btn</pre>、<pre class='tag'>teal-btn</pre>、<pre class='tag'>blue-btn</pre>、<pre class='tag'>light-blue-btn</pre>、<pre class='tag'>cyan-btn</pre>、<pre class='tag'>indigo-btn</pre>、<pre class='tag'>purple-btn</pre>、<pre class='tag'>deep-purple-btn</pre>、<pre class='tag'>brown-btn</pre>、<pre class='tag'>gray-btn</pre>、<pre class='tag'>blue-gray-btn</pre>、<pre class='tag'>white-btn</pre> 若要使用，只要在該按鈕元素上加上即可，如果要新增顏色，可以修改 <pre class='tag path'>./scss/_oa-config.scss</pre> 檔案內的 <b>$mainBtns</b> 變數，可以自行新增、刪除、修改。
+      </div>
+
+      <div>
+        <h2>使用方法</h2>
+        加入 css
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-jelly-radio.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class=&quot;oa-jelly-radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;radio&quot; name=&quot;radio&quot; checked&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;radio&quot;&gt;Item 1&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-radio red-rdo&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;red&quot; name=&quot;radio&quot;&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;red&quot;&gt;Item 2&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-radio orange-rdo&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;orange&quot; name=&quot;radio&quot;&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;orange&quot;&gt;Item 3&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-radio yellow-rdo&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;yellow&quot; name=&quot;radio&quot;&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;yellow&quot;&gt;Item 4&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-radio green-rdo&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;green&quot; name=&quot;radio&quot;&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;green&quot;&gt;Item 5&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-radio blue-rdo&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;blue&quot; name=&quot;radio&quot;&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;blue&quot;&gt;Item 6&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-radio cyan-rdo&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;cyan&quot; name=&quot;radio&quot;&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;cyan&quot;&gt;Item 7&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-radio purple-rdo&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;purple&quot; name=&quot;radio&quot;&gt;
+    &lt;span class=&quot;rdo-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;purple&quot;&gt;Item 8&lt;/label&gt;
+  &lt;/div&gt;
+</pre>
+<br />
+
+        效果
+<br />
+        <div class="oa-jelly-radio pure-rdo"><input type="radio" id="pure-rdo-2" name="rdo2" checked><span class="rdo-check"></span> <label for="pure-rdo-2">Item 1</label></div>
+        <div class="oa-jelly-radio red-rdo"><input type="radio" id="red-rdo-2" name="rdo2"><span class="rdo-check"></span> <label for="red-rdo-2">Item 2</label></div>
+        <div class="oa-jelly-radio orange-rdo"><input type="radio" id="orange-rdo-2" name="rdo2"><span class="rdo-check"></span> <label for="orange-rdo-2">Item 3</label></div>
+        <div class="oa-jelly-radio yellow-rdo"><input type="radio" id="yellow-rdo-2" name="rdo2"><span class="rdo-check"></span> <label for="yellow-rdo-2">Item 4</label></div>
+        <div class="oa-jelly-radio green-rdo"><input type="radio" id="green-rdo-2" name="rdo2"><span class="rdo-check"></span> <label for="green-rdo-2">Item 5</label></div>
+        <div class="oa-jelly-radio blue-rdo"><input type="radio" id="blue-rdo-2" name="rdo2"><span class="rdo-check"></span> <label for="blue-rdo-2">Item 6</label></div>
+        <div class="oa-jelly-radio cyan-rdo"><input type="radio" id="cyan-rdo-2" name="rdo2"><span class="rdo-check"></span> <label for="cyan-rdo-2">Item 7</label></div>
+        <div class="oa-jelly-radio purple-rdo"><input type="radio" id="purple-rdo-2" name="rdo2"><span class="rdo-check"></span> <label for="purple-rdo-2">Item 8</label></div>
+        
+        <h2>顏色</h2>
+        目前預設的顏色有以下 <pre class='tag'>red-rdo</pre>、<pre class='tag'>Pink-rdo</pre>、<pre class='tag'>orange-rdo</pre>、<pre class='tag'>deep-orange-rdo</pre>、<pre class='tag'>yellow-rdo</pre>、<pre class='tag'>amber-rdo</pre>、<pre class='tag'>light-green-rdo</pre>、<pre class='tag'>green-rdo</pre>、<pre class='tag'>lime-rdo</pre>、<pre class='tag'>teal-rdo</pre>、<pre class='tag'>blue-rdo</pre>、<pre class='tag'>light-blue-rdo</pre>、<pre class='tag'>cyan-rdo</pre>、<pre class='tag'>indigo-rdo</pre>、<pre class='tag'>purple-rdo</pre>、<pre class='tag'>deep-purple-rdo</pre>、<pre class='tag'>brown-rdo</pre>、<pre class='tag'>gray-rdo</pre>、<pre class='tag'>blue-gray-rdo</pre>、<pre class='tag'>white-rdo</pre> 若要使用，只要在該按鈕元素上加上即可，如果要新增顏色，可以修改 <pre class='tag path'>./scss/_oa-config.scss</pre> 檔案內的 <b>$mainBtns</b> 變數，可以自行新增、刪除、修改。
+      
+      </div>
+      <div>
+        <h2>使用方法</h2>
+        加入 css
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-jelly-checkbox.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class=&quot;oa-jelly-checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; checked&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;checkbox&quot;&gt;Item 1&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-checkbox red-ckb&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;red&quot; checked&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;red&quot;&gt;Item 2&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-checkbox orange-ckb&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;orange&quot; checked&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;orange&quot;&gt;Item 3&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-checkbox yellow-ckb&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;yellow&quot; checked&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;yellow&quot;&gt;Item 4&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-checkbox green-ckb&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;green&quot;&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;green&quot;&gt;Item 5&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-checkbox blue-ckb&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;blue&quot;&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;blue&quot;&gt;Item 6&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-checkbox cyan-ckb&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;cyan&quot;&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;cyan&quot;&gt;Item 7&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-checkbox purple-ckb&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;purple&quot;&gt;
+    &lt;span class=&quot;ckb-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;purple&quot;&gt;Item 8&lt;/label&gt;
+  &lt;/div&gt;
+</pre>
+<br />
+
+        效果
+<br />
+        <div class="oa-jelly-checkbox pure-ckb"><input type="checkbox" id="pure-ckb-2" checked><span class="ckb-check"></span> <label for="pure-ckb-2">Item 1</label></div>
+        <div class="oa-jelly-checkbox red-ckb"><input type="checkbox" id="red-ckb-2" checked><span class="ckb-check"></span> <label for="red-ckb-2">Item 2</label></div>
+        <div class="oa-jelly-checkbox orange-ckb"><input type="checkbox" id="orange-ckb-2" checked><span class="ckb-check"></span> <label for="orange-ckb-2">Item 3</label></div>
+        <div class="oa-jelly-checkbox yellow-ckb"><input type="checkbox" id="yellow-ckb-2" checked><span class="ckb-check"></span> <label for="yellow-ckb-2">Item 4</label></div>
+        <div class="oa-jelly-checkbox green-ckb"><input type="checkbox" id="green-ckb-2"><span class="ckb-check"></span> <label for="green-ckb-2">Item 5</label></div>
+        <div class="oa-jelly-checkbox blue-ckb"><input type="checkbox" id="blue-ckb-2"><span class="ckb-check"></span> <label for="blue-ckb-2">Item 6</label></div>
+        <div class="oa-jelly-checkbox cyan-ckb"><input type="checkbox" id="cyan-ckb-2"><span class="ckb-check"></span> <label for="cyan-ckb-2">Item 7</label></div>
+        <div class="oa-jelly-checkbox purple-ckb"><input type="checkbox" id="purple-ckb-2"><span class="ckb-check"></span> <label for="purple-ckb-2">Item 8</label></div>
+
+        <h2>顏色</h2>
+        目前預設的顏色有以下 <pre class='tag'>red-ckb</pre>、<pre class='tag'>Pink-ckb</pre>、<pre class='tag'>orange-ckb</pre>、<pre class='tag'>deep-orange-ckb</pre>、<pre class='tag'>yellow-ckb</pre>、<pre class='tag'>amber-ckb</pre>、<pre class='tag'>light-green-ckb</pre>、<pre class='tag'>green-ckb</pre>、<pre class='tag'>lime-ckb</pre>、<pre class='tag'>teal-ckb</pre>、<pre class='tag'>blue-ckb</pre>、<pre class='tag'>light-blue-ckb</pre>、<pre class='tag'>cyan-ckb</pre>、<pre class='tag'>indigo-ckb</pre>、<pre class='tag'>purple-ckb</pre>、<pre class='tag'>deep-purple-ckb</pre>、<pre class='tag'>brown-ckb</pre>、<pre class='tag'>gray-ckb</pre>、<pre class='tag'>blue-gray-ckb</pre>、<pre class='tag'>white-ckb</pre> 若要使用，只要在該按鈕元素上加上即可，如果要新增顏色，可以修改 <pre class='tag path'>./scss/_oa-config.scss</pre> 檔案內的 <b>$mainBtns</b> 變數，可以自行新增、刪除、修改。
+
+      </div>
+      <div>
+
+        <h2>使用方法</h2>
+        加入 css、js
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-jelly-select.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+  &lt;script src=&quot;oa-jelly-select.js&quot; language=&quot;javascript&quot; type=&quot;text/javascript&quot; /&gt;&lt;/script&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;select class=&quot;oa-select&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select class=&quot;oa-select red-dpd&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select class=&quot;oa-select orange-dpd&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select class=&quot;oa-select yellow-dpd&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select class=&quot;oa-select green-dpd&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select class=&quot;oa-select blue-dpd&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select class=&quot;oa-select cyan-dpd&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select class=&quot;oa-select purple-dpd&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Item 1&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected&gt;Item 2(default)&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Item 3&lt;/option&gt;
+  &lt;/select&gt;
+
+</pre>
+<br />
+        Javascript 寫法
+<pre class='javascript prettyprint' data-path='javascript'>
+  $(function () {
+    $('.oa-select').OAjellyDropdown ({
+      color:       null,    // 顏色樣式，可用值參照顏色設定。  可用 html data-color 設定。         預設值: null
+      width:       '100px', // 寬度。                      可用 html data-width 設定。         預設值: '100px'
+      isRipple:    true,    // 是否使用水波紋效果。           可用 html data-isRipple 設定。     預設值: true
+      autoOpen:    false,   // 是否自動展開選單。            可用 html data-autoOpen 設定。      預設值: false
+      paddingLeft: '12px'   // 左邊 padding 的值。          可用 html data-paddingLeft 設定。   預設值: '12px'
+    });
+  });
+</pre>
+<br />
+
+        效果
+<br />
+        <select class="oa-select pure-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select red-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select orange-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select yellow-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select green-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select blue-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select cyan-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+        <select class="oa-select purple-dpd"><option value="1">Item 1</option><option value="2" selected="selected">Item 2(default)</option><option value="3">Item 3</option></select>
+      
+        <h2>顏色</h2>
+        目前預設的顏色有以下 <pre class='tag'>red-dpd</pre>、<pre class='tag'>Pink-dpd</pre>、<pre class='tag'>orange-dpd</pre>、<pre class='tag'>deep-orange-dpd</pre>、<pre class='tag'>yellow-dpd</pre>、<pre class='tag'>amber-dpd</pre>、<pre class='tag'>light-green-dpd</pre>、<pre class='tag'>green-dpd</pre>、<pre class='tag'>lime-dpd</pre>、<pre class='tag'>teal-dpd</pre>、<pre class='tag'>blue-dpd</pre>、<pre class='tag'>light-blue-dpd</pre>、<pre class='tag'>cyan-dpd</pre>、<pre class='tag'>indigo-dpd</pre>、<pre class='tag'>purple-dpd</pre>、<pre class='tag'>deep-purple-dpd</pre>、<pre class='tag'>brown-dpd</pre>、<pre class='tag'>gray-dpd</pre>、<pre class='tag'>blue-gray-dpd</pre>、<pre class='tag'>white-dpd</pre> 若要使用，只要在該按鈕元素上加上即可，如果要新增顏色，可以修改 <pre class='tag path'>./scss/_oa-config.scss</pre> 檔案內的 <b>$mainBtns</b> 變數，可以自行新增、刪除、修改。
+      
+      </div>
+      <div>
+
+        <h2>使用方法</h2>
+        <h3>樣式一</h3>
+        加入 css
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-jelly-switch.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+</pre>
+<br />
+        Html 寫法
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class=&quot;oa-jelly-switch&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;switch&quot; checked&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;switch&quot;&gt;Setting 1&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch red-swh&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;red&quot; checked&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;red&quot;&gt;Setting 2&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch orange-swh&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;orange&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;orange&quot;&gt;Setting 3&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch yellow-swh&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;yellow&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;yellow&quot;&gt;Setting 4&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;br /&gt;
+
+  &lt;div class=&quot;oa-jelly-switch green-swh&quot; checked&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;green&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;green&quot;&gt;Setting 5&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch blue-swh&quot; checked&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;blue&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;blue&quot;&gt;Setting 6&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch cyan-swh&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;cyan&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;cyan&quot;&gt;Setting 7&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch purple-swh&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;purple&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;purple&quot;&gt;Setting 8&lt;/label&gt;
+  &lt;/div&gt;
+
+</pre>
+<br />
+
+        效果
+<br />
+        <div class="oa-jelly-switch pure-swh"><input type="checkbox" id="swh-pure-3" checked><span class="swh-check"></span> <label for="swh-pure-3">Setting 1</label></div>
+        <div class="oa-jelly-switch red-swh"><input type="checkbox" id="swh-red-3" checked><span class="swh-check"></span> <label for="swh-red-3">Setting 2</label></div>
+        <div class="oa-jelly-switch orange-swh"><input type="checkbox" id="swh-orange-3"><span class="swh-check"></span> <label for="swh-orange-3">Setting 3</label></div>
+        <div class="oa-jelly-switch yellow-swh"><input type="checkbox" id="swh-yellow-3"><span class="swh-check"></span> <label for="swh-yellow-3">Setting 4</label></div>
+        <br />
+        <div class="oa-jelly-switch green-swh"><input type="checkbox" id="swh-green-3" checked><span class="swh-check"></span> <label for="swh-green-3">Setting 5</label></div>
+        <div class="oa-jelly-switch blue-swh"><input type="checkbox" id="swh-blue-3" checked><span class="swh-check"></span> <label for="swh-blue-3">Setting 6</label></div>
+        <div class="oa-jelly-switch cyan-swh"><input type="checkbox" id="swh-cyan-3"><span class="swh-check"></span> <label for="swh-cyan-3">Setting 7</label></div>
+        <div class="oa-jelly-switch purple-swh"><input type="checkbox" id="swh-purple-3"><span class="swh-check"></span> <label for="swh-purple-3">Setting 8</label></div>
+        
+<br />
+<br />
+        <h3>樣式二</h3>
+        加入 css
+<pre class='html prettyprint' data-path='html'>
+  &lt;link href=&quot;oa-jelly-switch.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+</pre>
+<br />
+        Html 寫法 - 加入 <pre class='tag'>swh-full</pre> class
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class=&quot;oa-jelly-switch swh-full&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;switch&quot; checked&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;switch&quot;&gt;Setting 1&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch red-swh swh-full&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;red&quot; checked&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;red&quot;&gt;Setting 2&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch orange-swh swh-full&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;orange&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;orange&quot;&gt;Setting 3&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch yellow-swh swh-full&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;yellow&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;yellow&quot;&gt;Setting 4&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;br /&gt;
+
+  &lt;div class=&quot;oa-jelly-switch green-swh swh-full&quot; checked&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;green&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;green&quot;&gt;Setting 5&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch blue-swh  &quot; checked&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;blue&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;blue&quot;&gt;Setting 6&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch cyan-swh swh-full&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;cyan&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;cyan&quot;&gt;Setting 7&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;oa-jelly-switch purple-swh swh-full&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;purple&quot;&gt;
+    &lt;span class=&quot;swh-check&quot;&gt;&lt;/span&gt;
+    &lt;label for=&quot;purple&quot;&gt;Setting 8&lt;/label&gt;
+  &lt;/div&gt;
+
+</pre>
+<br />
+
+        效果
+<br />
+        <div class="oa-jelly-switch pure-swh swh-full"><input type="checkbox" id="swh-pure-4" checked><span class="swh-check"></span> <label for="swh-pure-4">Setting 1</label></div>
+        <div class="oa-jelly-switch red-swh swh-full"><input type="checkbox" id="swh-red-4" checked><span class="swh-check"></span> <label for="swh-red-4">Setting 2</label></div>
+        <div class="oa-jelly-switch orange-swh swh-full"><input type="checkbox" id="swh-orange-4"><span class="swh-check"></span> <label for="swh-orange-4">Setting 3</label></div>
+        <div class="oa-jelly-switch yellow-swh swh-full"><input type="checkbox" id="swh-yellow-4"><span class="swh-check"></span> <label for="swh-yellow-4">Setting 4</label></div>
+        <br />
+        <div class="oa-jelly-switch green-swh swh-full"><input type="checkbox" id="swh-green-4" checked><span class="swh-check"></span> <label for="swh-green-4">Setting 5</label></div>
+        <div class="oa-jelly-switch blue-swh swh-full"><input type="checkbox" id="swh-blue-4" checked><span class="swh-check"></span> <label for="swh-blue-4">Setting 6</label></div>
+        <div class="oa-jelly-switch cyan-swh swh-full"><input type="checkbox" id="swh-cyan-4"><span class="swh-check"></span> <label for="swh-cyan-4">Setting 7</label></div>
+        <div class="oa-jelly-switch purple-swh swh-full"><input type="checkbox" id="swh-purple-4"><span class="swh-check"></span> <label for="swh-purple-4">Setting 8</label></div>
+
+        <h2>顏色</h2>
+        目前預設的顏色有以下 <pre class='tag'>red-swh</pre>、<pre class='tag'>Pink-swh</pre>、<pre class='tag'>orange-swh</pre>、<pre class='tag'>deep-orange-swh</pre>、<pre class='tag'>yellow-swh</pre>、<pre class='tag'>amber-swh</pre>、<pre class='tag'>light-green-swh</pre>、<pre class='tag'>green-swh</pre>、<pre class='tag'>lime-swh</pre>、<pre class='tag'>teal-swh</pre>、<pre class='tag'>blue-swh</pre>、<pre class='tag'>light-blue-swh</pre>、<pre class='tag'>cyan-swh</pre>、<pre class='tag'>indigo-swh</pre>、<pre class='tag'>purple-swh</pre>、<pre class='tag'>deep-purple-swh</pre>、<pre class='tag'>brown-swh</pre>、<pre class='tag'>gray-swh</pre>、<pre class='tag'>blue-gray-swh</pre>、<pre class='tag'>white-swh</pre> 若要使用，只要在該按鈕元素上加上即可，如果要新增顏色，可以修改 <pre class='tag path'>./scss/_oa-config.scss</pre> 檔案內的 <b>$mainBtns</b> 變數，可以自行新增、刪除、修改。
+
+      </div>
+      <div>
+        <div class='about'>
+          <div class='info clearfix'>
+            <div class='key'>作者名稱</div>
+            <div class='value'><a href='http://www.ioa.tw' target='_blank'>OA Wu</a></div>
+          </div>
+          <div class='info clearfix'>
+            <div class='key'>E-mail</div>
+            <div class='value'>comdan66@gmail.com</div>
+          </div>
+          <div class='info clearfix'>
+            <div class='key'>作品名稱</div>
+            <div class='value'>OA-material</div>
+          </div>
+          <div class='info clearfix'>
+            <div class='key'>最新版本</div>
+            <div class='value'>1.0.0</div>
+          </div>
+          <div class='info clearfix'>
+            <div class='key'>GitHub</div>
+            <div class='value'><a href='https://github.com/comdan66/OA-material' target='_blank'>OA-material</a></div>
+          </div>
+          <div class='info clearfix'>
+            <div class='key'>Reference</div>
+            <div class='value'><a href='https://github.com/tedshd/material_design_for_web' target='_blank'>Tedshd's GitHub</a></div>
+          </div>
+          <div class='info clearfix'>
+            <div class='key'>更新日期</div>
+            <div class='value'>2014/12/14</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='footer'>
+      <div class='description'>
+        <div class='divider'></div>
+        <div class='content bottom'>
+          OA's Material © 2014
+          <br />
+          如有 <u>相關問題</u> 歡迎來信 <key>comdan66@gmail.com</key> 或至 <a href='https://www.facebook.com/comdan66' target='_blank'>作者臉書</a> 留言。</div>
+      </div>
+    </div>
+
+  </body>
+</html>
