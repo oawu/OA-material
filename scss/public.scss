@@ -52,7 +52,7 @@ html {
     color: rgba(50, 50, 50, 0.8);
 
     @include font-smoothing(antialiased);
-    
+
     #container {
       position: relative;
       display: block;
