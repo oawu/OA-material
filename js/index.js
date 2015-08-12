@@ -4,7 +4,7 @@
  */
 
 $(function () {
-  $('.buttons.jelly button').click (function () {
+  $('button.jelly').click (function () {
     $(this).addClass ('jelly-effect')
            .bind ('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
              $(this).removeClass ('jelly-effect');

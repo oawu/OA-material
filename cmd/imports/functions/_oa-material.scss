@@ -3,16 +3,15 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-// <button type='button'></button>
+// <button></button>
 @mixin button($color: 'blue', $shadow: true) {
   border: 0 solid transparent;
   color: rgba(255, 255, 255, .85);
-  padding: 2px 10px 4px 10px;
   font-size: 15px;
   cursor: pointer;
   text-decoration: none;
   margin: 0;
-  padding: 5px 15px;
+  padding: 7px 15px;
   font-weight: bolder;
 
   @include scale(1);
@@ -85,7 +84,7 @@
   }
 }
 
-// <div class='radio'>
+// <div>
 //   <input type='radio' id='radio' name='radio'>
 //   <span></span>
 //   <label for='radio'>Item</label>
@@ -121,11 +120,11 @@
     &[disabled] {
       cursor: not-allowed;
 
-      label {
-        cursor: not-allowed;
-      }
       & ~ span {
         border-color: rgba(0, 0, 0, .1);
+        & ~ label {
+          cursor: not-allowed;
+        }
       }
     }
 
@@ -176,7 +175,7 @@
   }
 
   $value: map-get($btns, $color);
-  @if($value){
+  @if($value) {
     input[type='radio'] {
       & ~ span {
         border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100, nth($value, 3) - 100, .4);
@@ -207,7 +206,7 @@
   }
 }
 
-// <div class='checkbox'>
+// <div>
 //   <input type='checkbox' id='checkbox'>
 //   <span></span>
 //   <label for='checkbox'>Item</label>
@@ -245,9 +244,10 @@
 
     &[disabled] {
       cursor: not-allowed;
-
-      label {
-        cursor: not-allowed;
+      ~ span {
+        ~ label {
+          cursor: not-allowed;
+        }
       }
     }
 
@@ -347,7 +347,7 @@
   }
 }
 
-// <div class='switch'>
+// <div>
 //   <input type='checkbox' id='switch'>
 //   <span></span>
 //   <label for='switch'>Item</label>
@@ -369,6 +369,7 @@
 
   label {
     padding-left: 4px;
+    cursor: pointer;
   }
   input[type='checkbox'] {
     position: absolute;
@@ -389,6 +390,9 @@
           @include box-shadow(
             inset -1px -1px 1px rgba(0, 0, 0, 0.1),
             inset 1px 1px 1px rgba(255, 255, 255, 0.1));
+        }
+        ~ label {
+          cursor: not-allowed;
         }
       }
     }
@@ -457,6 +461,8 @@
     }
   }
 
+  $value: map-get($btns, $color);
+
   @if($full) {
     input[type='checkbox'] {
       & ~ span {
@@ -480,6 +486,150 @@
           }
         }
       }
+    }
+    @if($value) {
+      input[type='checkbox'] {
+        &[disabled] {
+          & ~ span {
+            &:before {
+              background-color: rgba(nth($value, 1) + 55, nth($value, 2) + 55, nth($value, 3) + 55, 0.2);
+            }
+            &:after {
+              background-color: rgba(nth($value, 1) + 105, nth($value, 2) + 85, nth($value, 3) + 85, 0.9);
+            }
+          }
+        }
+        &:checked {
+          & ~ span {
+            &:before {
+              background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 0.8);
+            }
+            &:after {
+              background-color: rgba(nth($value, 1) - 25, nth($value, 2) - 25, nth($value, 3) - 25, 1);
+            }
+          }
+        }
+        & ~ span {
+          &:before {
+            background-color: rgba(nth($value, 1) + 75, nth($value, 2) + 75, nth($value, 3) + 75, 0.8);
+          }
+          &:after {
+            background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 1);
+          }
+        }
+      }
+    }
+  }
+  @else {
+    @if($value) {
+      input[type='checkbox'] {
+        &[disabled] {
+          & ~ span {
+            &:before {
+              background-color: rgba(nth($value, 1) + 55, nth($value, 2) + 55, nth($value, 3) + 55, 0.2);
+            }
+            &:after {
+              background-color: rgba(nth($value, 1) + 105, nth($value, 2) + 85, nth($value, 3) + 85, 0.9);
+            }
+          }
+        }
+        &:checked {
+          & ~ span {
+            &:before {
+              background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 0.8);
+            }
+            &:after {
+              background-color: rgba(nth($value, 1) - 25, nth($value, 2) - 25, nth($value, 3) - 25, 1);
+            }
+          }
+        }
+        & ~ span {
+          &:before {
+            background-color: rgba(nth($value, 1) + 75, nth($value, 2) + 75, nth($value, 3) + 75, 0.8);
+          }
+          &:after {
+            background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// <div></div>
+@mixin paperx($type: '') {
+  position: relative;
+  display: block;
+  word-break: break-all;
+  padding: 10px;
+  border: 1px solid rgba(190, 191, 189, .8);
+  background-color: rgba(255, 255, 255, 1);
+  @include border-radius(2px);
+
+  @if($type == 'pure') {
+    overflow: hidden;
+    @include box-shadow(0 0 5px rgba(0, 0, 0, .15));
+  } @else if($type == 'shadow') {
+    overflow: hidden;
+    @include box-shadow(2px 2px 5px rgba(0, 0, 0, .2));
+  } @else if($type == 'horizontal-convex') {
+    &:after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      display: inline-block;
+      width: calc(100% - 20px);
+      height: 100%;
+      background: #777;
+
+      @include box-shadow(0 0 10px 5px rgba(0, 0, 0, .2));
+      @include border-bottom-left-radius(50% 10px);
+      @include border-bottom-right-radius(50% 10px);
+      @include border-top-left-radius(50% 10px);
+      @include border-top-right-radius(50% 10px);
+    }
+  } @else if($type == 'vertical-convex') {
+    &:after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: calc(100% - 20px);
+      background: #777;
+
+      @include box-shadow(0 0 10px 5px rgba(0, 0, 0, .2));
+      @include border-bottom-left-radius(10px 50%);
+      @include border-bottom-right-radius(10px 50%);
+      @include border-top-left-radius(10px 50%);
+      @include border-top-right-radius(10px 50%);
+    }
+  } @else if($type == 'corner') {
+    &:before, &:after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      display: inline-block;
+      bottom: 15px;
+      left: 10px;
+      width: 50%;
+      max-width:300px;
+      background: #777;
+      max-height: 100px;
+      min-height: 10px;
+
+      @include transform(rotate(-3deg));
+      @include box-shadow(0 15px 10px #777);
+    }
+    &:after {
+      right: 10px;
+      left: auto;
+
+      @include transform(rotate(3deg));
     }
   }
 }

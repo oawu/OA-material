@@ -220,7 +220,7 @@ body {
       .l, .r {
         width: 50px;
         a {
-          @include a(rgba(255, 255, 255, 1));
+          @include a(1px, false, rgba(255, 255, 255, 1));
           display: none;
           border-bottom-width: 0;
           &:hover, &:active {
@@ -263,7 +263,7 @@ body {
         @include clearfix ();
 
         a {
-          @include a(rgba(255, 255, 255, .8));
+          @include a(1px, false, rgba(255, 255, 255, .8));
           float: left;
           font-weight: bolder;
           border-bottom-width: 3px;
@@ -302,6 +302,7 @@ $footerHeight: 50px;
 
 #footer {
   margin: 30px auto;
+  margin-top: 50px;
   height: $footerHeight;
   @include clearfix();
 

@@ -43,6 +43,7 @@ $(function () {
   if (!sideLinks.length) return;
 
   var now = document.URL.replace (/^.*[\\\/]/, '');
+  now = now.length ? now : 'index.html';
   var nowLink = sideLinks.filter (function (t) { return t.file == now; });
   if (nowLink.length && (nowLink = nowLink[0]))
     $('title').text (nowLink.name + ' - OA-material');

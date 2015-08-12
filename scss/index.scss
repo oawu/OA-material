@@ -5,7 +5,6 @@
 
 @import "_oa";
 
-$names: ('pure', 'red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple');
 
 html {
   body {
@@ -17,174 +16,28 @@ html {
           margin-top: 50px;
         }
 
-        h2 {
+        h2, h3 {
           text-align: left;
-          padding-bottom: 5px;
+          padding-bottom: 10px;
           padding-left: 5px;
-          margin-bottom: 5px;
-          border-bottom: 3px solid rgba(39, 40, 34, .1);
+          margin: 0;
+          border-bottom: 4px solid rgba(39, 40, 34, .1);
         }
+        h3 {
+          border: 0;
+          margin: 0;
+          margin-top: 15px;
+          padding: 0;
+          padding-left: 20px;
 
-        > :not(h2) {
-          float: left;
-        }
+          ~ div {
+            text-align: left;
+            padding: 10px 20px;
+            @include clearfix();
 
-        button {
-          @include button();
-          margin: 5px;
-
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i + 1}) {
-              $value: map-get($btns, nth($names, $i));
-              @if($value){
-                background-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
-                &:hover {
-                  background-color: rgba(nth($value, 1) - 10, nth($value, 2) - 10,nth($value, 3) - 10, 1);
-                }
-                &[disabled] {
-                  background-color: rgba(nth($value, 1) + 10, nth($value, 2) + 10, nth($value, 3) + 10, 0.85);
-                }
-              }
-            }
-          }
-        }
-
-        .radio {
-          @include radio();
-          margin: 5px;
-
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i + 1}) {
-              $value: map-get($btns, nth($names, $i));
-
-              @if($value){
-                input[type='radio'] {
-                  & ~ span {
-                    border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100, nth($value, 3) - 100, .4);
-
-                    &:after {
-                      background-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        .checkbox {
-          @include checkbox();
-          margin: 5px;
-
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i + 1}) {
-              $value: map-get($btns, nth($names, $i));
-
-              @if($value) {
-                input[type='checkbox'] {
-                  &[disabled] {
-                    & ~ span {
-                      border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .25);
-                    }
-                  }
-                  &:checked {
-                    & ~ span {
-                      border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .3);
-                    }
-                  }
-                  & ~ span {
-                    border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .4);
-                    &:after {
-                      border-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        .switch {
-          @include switch();
-          margin: 5px;
-
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i + 1}) {
-              $value: map-get($btns, nth($names, $i));
-              @if($value) {
-                input[type='checkbox'] {
-                  &[disabled] {
-                    & ~ span {
-                      &:before {
-                        background-color: rgba(nth($value, 1) + 55, nth($value, 2) + 55, nth($value, 3) + 55, 0.2);
-                      }
-                      &:after {
-                        background-color: rgba(nth($value, 1) + 105, nth($value, 2) + 85, nth($value, 3) + 85, 0.9);
-                      }
-                    }
-                  }
-                  &:checked {
-                    & ~ span {
-                      &:before {
-                        background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 0.8);
-                      }
-                      &:after {
-                        background-color: rgba(nth($value, 1) - 25, nth($value, 2) - 25, nth($value, 3) - 25, 1);
-                      }
-                    }
-                  }
-                  & ~ span {
-                    &:before {
-                      background-color: rgba(nth($value, 1) + 75, nth($value, 2) + 75, nth($value, 3) + 75, 0.8);
-                    }
-                    &:after {
-                      background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 1);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        .switch-full {
-          @include switch(true);
-          margin: 5px;
-
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i + 1}) {
-              $value: map-get($btns, nth($names, $i));
-              @if($value) {
-                input[type='checkbox'] {
-                  &[disabled] {
-                    & ~ span {
-                      &:before {
-                        background-color: rgba(nth($value, 1) + 55, nth($value, 2) + 55, nth($value, 3) + 55, 0.2);
-                      }
-                      &:after {
-                        background-color: rgba(nth($value, 1) + 105, nth($value, 2) + 85, nth($value, 3) + 85, 0.9);
-                      }
-                    }
-                  }
-                  &:checked {
-                    & ~ span {
-                      &:before {
-                        background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 0.8);
-                      }
-                      &:after {
-                        background-color: rgba(nth($value, 1) - 25, nth($value, 2) - 25, nth($value, 3) - 25, 1);
-                      }
-                    }
-                  }
-                  & ~ span {
-                    &:before {
-                      background-color: rgba(nth($value, 1) + 75, nth($value, 2) + 75, nth($value, 3) + 75, 0.8);
-                    }
-                    &:after {
-                      background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 1);
-                    }
-                  }
-                }
-              }
+            > * {
+              float: left;
+              margin: 5px;
             }
           }
         }
