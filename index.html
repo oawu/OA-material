@@ -44,8 +44,8 @@
   <body lang="zh-tw">
     <div id='container'>
 
-      <div class='area'>
-        <h2>Button</h2>
+      <div id='button' class='area'>
+        <h2><a href='#button'>Button</a></h2>
 
         <h3>General</h3>
         <div class='buttons'>
@@ -60,7 +60,7 @@
         </div>
 
         <h3>Jelly</h3>
-        <div class='buttons'>
+        <div class='jelly-buttons'>
           <button class='oa-btn jelly'>Pure Button</button>
           <button class='oa-btn red jelly'>Red Button</button>
           <button class='oa-btn orange jelly'>Orange Button</button>
@@ -72,7 +72,7 @@
         </div>
 
         <h3>Disable</h3>
-        <div class='buttons'>
+        <div class='disable-buttons'>
           <button disabled class='oa-btn'>Pure Button</button>
           <button disabled class='oa-btn red'>Red Button</button>
           <button disabled class='oa-btn orange'>Orange Button</button>
@@ -84,8 +84,8 @@
         </div>
       </div>
 
-      <div class='area'>
-        <h2>Radio</h2>
+      <div id='radio' class='area'>
+        <h2><a href='#radio'>Radio</a></h2>
 
         <h3>General</h3>
         <div class='radios'>
@@ -100,7 +100,7 @@
         </div>
 
         <h3>Disable</h3>
-        <div class='radios'>
+        <div class='disable-radios'>
           <div class="oa-rdo"><input type="radio" disabled id="radio1-disable" name="radio-disable"><span></span><label for="radio1-disable">Item 1</label></div>
           <div class="oa-rdo red"><input type="radio" disabled id="radio2-disable" name="radio-disable"><span></span><label for="radio2-disable">Item 2</label></div>
           <div class="oa-rdo orange"><input type="radio" disabled id="radio3-disable" name="radio-disable"><span></span><label for="radio3-disable">Item 3</label></div>
@@ -113,11 +113,11 @@
       </div>
 
 
-      <div class='area'>
-        <h2>Checkbox</h2>
+      <div id='checkbox' class='area'>
+        <h2><a href='#checkbox'>Checkbox</a></h2>
 
         <h3>General</h3>
-        <div class='radios'>
+        <div class='checkboxs'>
           <div class="oa-ckb"><input type="checkbox" id="checkbox1"><span></span><label for="checkbox1">Item 1</label></div>
           <div class="oa-ckb red"><input type="checkbox" id="checkbox2"><span></span><label for="checkbox2">Item 2</label></div>
           <div class="oa-ckb orange"><input type="checkbox" id="checkbox3"><span></span><label for="checkbox3">Item 3</label></div>
@@ -129,7 +129,7 @@
         </div>
 
         <h3>Disable</h3>
-        <div class='radios'>
+        <div class='disable-checkboxs'>
           <div class="oa-ckb"><input type="checkbox" disabled id="checkbox1-disable"><span></span><label for="checkbox1-disable">Item 1</label></div>
           <div class="oa-ckb red"><input type="checkbox" disabled id="checkbox2-disable"><span></span><label for="checkbox2-disable">Item 2</label></div>
           <div class="oa-ckb orange"><input type="checkbox" disabled id="checkbox3-disable"><span></span><label for="checkbox3-disable">Item 3</label></div>
@@ -142,8 +142,8 @@
       </div>
 
 
-      <div class='area'>
-        <h2>Switch</h2>
+      <div id='switch' class='area'>
+        <h2><a href='#switch'>Switch</a></h2>
 
         <h3>General</h3>
         <div class='switches'>
@@ -158,7 +158,7 @@
         </div>
 
         <h3>Full</h3>
-        <div class='switches'>
+        <div class='full-switches'>
           <div class="oa-swh full"><input type="checkbox" id="switch1-full"><span></span><label for="switch1-full">Item 1</label></div>
           <div class="oa-swh full red"><input type="checkbox" id="switch2-full"><span></span><label for="switch2-full">Item 2</label></div>
           <div class="oa-swh full orange"><input type="checkbox" id="switch3-full"><span></span><label for="switch3-full">Item 3</label></div>
@@ -170,7 +170,7 @@
         </div>
 
         <h3>Disable</h3>
-        <div class='radios'>
+        <div class='disable-switches'>
           <div class="oa-swh"><input type="checkbox" disabled id="switch1-disable"><span></span><label for="switch1-disable">Item 1</label></div>
           <div class="oa-swh red"><input type="checkbox" disabled id="switch2-disable"><span></span><label for="switch2-disable">Item 2</label></div>
           <div class="oa-swh orange"><input type="checkbox" disabled id="switch3-disable"><span></span><label for="switch3-disable">Item 3</label></div>
@@ -182,49 +182,19 @@
         </div>
       </div>
 
-      <div class='area'>
-        <h2>Paper</h2>
+      <div id='paper' class='area'>
+        <h2><a href='#paper'>Paper</a></h2>
 
         <h3>General</h3>
         <div class='papers'>
-          <div class='paper-pure'>type: pure</div>
+          <div class='oa-paper'>pure</div>
+          <div class='oa-paper shadow'>shadow</div>
+          <div class='oa-paper corner'>corner</div>
+          <div class='oa-paper convex'>convex</div>
+          <div class='oa-paper horizontal-convex'>horizontal-convex</div>
+          <div class='oa-paper vertical-convex'>vertical-convex</div>
         </div>
       </div>
-<!--
-
-      <div class='area switches'>
-        <h2>Switch</h2>
-        <div class="switch"><input type="checkbox" id="switch1"><span></span><label for="switch1">Item 1</label></div>
-        <div class="switch"><input type="checkbox" id="switch2"><span></span><label for="switch2">Item 2</label></div>
-        <div class="switch"><input type="checkbox" id="switch3"><span></span><label for="switch3">Item 3</label></div>
-        <div class="switch"><input type="checkbox" id="switch4"><span></span><label for="switch4">Item 4</label></div>
-        <div class="switch"><input type="checkbox" id="switch5"><span></span><label for="switch5">Item 5</label></div>
-        <div class="switch"><input type="checkbox" id="switch6"><span></span><label for="switch6">Item 6</label></div>
-        <div class="switch"><input type="checkbox" id="switch7"><span></span><label for="switch7">Item 7</label></div>
-        <div class="switch"><input type="checkbox" id="switch8"><span></span><label for="switch8">Item 8</label></div>
-      </div>
-
-      <div class='area switche-fulls'>
-        <h2>Switch (type: full)</h2>
-        <div class="switch-full"><input type="checkbox" id="switch-full1"><span></span><label for="switch-full1">Item 1</label></div>
-        <div class="switch-full"><input type="checkbox" id="switch-full2"><span></span><label for="switch-full2">Item 2</label></div>
-        <div class="switch-full"><input type="checkbox" id="switch-full3"><span></span><label for="switch-full3">Item 3</label></div>
-        <div class="switch-full"><input type="checkbox" id="switch-full4"><span></span><label for="switch-full4">Item 4</label></div>
-        <div class="switch-full"><input type="checkbox" id="switch-full5"><span></span><label for="switch-full5">Item 5</label></div>
-        <div class="switch-full"><input type="checkbox" id="switch-full6"><span></span><label for="switch-full6">Item 6</label></div>
-        <div class="switch-full"><input type="checkbox" id="switch-full7"><span></span><label for="switch-full7">Item 7</label></div>
-        <div class="switch-full"><input type="checkbox" id="switch-full8"><span></span><label for="switch-full8">Item 8</label></div>
-      </div>
-
-      <div class='area papers'>
-        <h2>Paper</h2>
-        <div class='paper-pure'>type: pure</div>
-        <div class='paper-shadow'>type: shadow</div>
-        <div class='paper-corner'>type: corner</div>
-        <div class='paper-horizontal-convex'>type: horizontal convex</div>
-        <div class='paper-vertical-convex'>type: vertical convex</div>
-      </div>
- -->
     </div>
   </body>
 </html>

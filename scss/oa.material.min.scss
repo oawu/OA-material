@@ -19,7 +19,8 @@ $names: ('pure', 'red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple');
           background-color: rgba(nth($value, 1) - 10, nth($value, 2) - 10,nth($value, 3) - 10, 1);
         }
         &[disabled] {
-          background-color: rgba(nth($value, 1) + 10, nth($value, 2) + 10, nth($value, 3) + 10, 0.85);
+          background-color: rgba(nth($value, 1) + 70, nth($value, 2) + 70, nth($value, 3) + 70, 0.85);
+          color: rgba(255, 255, 255, 1);
         }
       }
     }
@@ -88,10 +89,10 @@ $names: ('pure', 'red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple');
           &[disabled] {
             & ~ span {
               &:before {
-                background-color: rgba(nth($value, 1) + 55, nth($value, 2) + 55, nth($value, 3) + 55, 0.2);
+                background-color: rgba(nth($value, 1) + 125, nth($value, 2) + 125, nth($value, 3) + 125, 1);
               }
               &:after {
-                background-color: rgba(nth($value, 1) + 105, nth($value, 2) + 85, nth($value, 3) + 85, 0.9);
+                background-color: rgba(nth($value, 1) + 125, nth($value, 2) + 125, nth($value, 3) + 125, 0.9);
               }
             }
           }
@@ -157,5 +158,27 @@ $names: ('pure', 'red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple');
         }
       }
     }
+  }
+}
+
+.oa-paper {
+  @include paper('pure');
+  width: 200px;
+  height: 150px;
+
+  &.shadow {
+    @include paper('shadow');
+  }
+  &.corner {
+    @include paper('corner');
+  }
+  &.convex {
+    @include paper('convex');
+  }
+  &.horizontal-convex {
+    @include paper('horizontal-convex');
+  }
+  &.vertical-convex {
+    @include paper('vertical-convex');
   }
 }

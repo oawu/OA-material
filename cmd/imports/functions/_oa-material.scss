@@ -64,7 +64,8 @@
       background-color: rgba(nth($value, 1) - 10, nth($value, 2) - 10,nth($value, 3) - 10, 1);
     }
     &[disabled] {
-      background-color: rgba(nth($value, 1) + 10, nth($value, 2) + 10, nth($value, 3) + 10, 0.85);
+      background-color: rgba(nth($value, 1) + 70, nth($value, 2) + 70, nth($value, 3) + 70, 0.85);
+      color: rgba(255, 255, 255, 1);
     }
   }
 
@@ -120,16 +121,16 @@
     &[disabled] {
       cursor: not-allowed;
 
-      & ~ span {
-        border-color: rgba(0, 0, 0, .1);
-        & ~ label {
+      ~ span {
+        border-color: rgba(192, 192, 192, .5);
+        ~ label {
           cursor: not-allowed;
         }
       }
     }
 
-    & ~ span {
-      border: 1px solid transparent;
+    ~ span {
+      border: 1px solid rgba(192, 192, 192, 1);
       position: relative;
       display: inline-block;
       z-index: 0;
@@ -161,7 +162,7 @@
       }
     }
     &:checked {
-      & ~ span {
+      ~ span {
         &:after {
           @include opacity(1);
           top: $spacingWeight;
@@ -177,7 +178,7 @@
   $value: map-get($btns, $color);
   @if($value) {
     input[type='radio'] {
-      & ~ span {
+      ~ span {
         border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100, nth($value, 3) - 100, .4);
 
         &:after {
@@ -251,7 +252,7 @@
       }
     }
 
-    & ~ span {
+    ~ span {
       position: relative;
       display: inline-block;
       z-index: 0;
@@ -260,7 +261,7 @@
       background-color: rgba(255, 255, 255, 1);
       cursor: pointer;
       pointer-events: none;
-      border: solid $borderWidth transparent;
+      border: solid $borderWidth rgba(192, 192, 192, 1);
 
       @include border-radius(5px);
       @include box-sizing(content-box);
@@ -290,7 +291,7 @@
     }
 
     &:checked {
-      & ~ span {
+      ~ span {
         @include animation(oa-material-checkbox-jelly-effect .2s ease-out);
         &:after {
           width: $tickWidth;
@@ -311,16 +312,16 @@
   @if($value) {
     input[type='checkbox'] {
       &[disabled] {
-        & ~ span {
+        ~ span {
           border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .25);
         }
       }
       &:checked {
-        & ~ span {
+        ~ span {
           border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .3);
         }
       }
-      & ~ span {
+      ~ span {
         border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .4);
         &:after {
           border-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
@@ -385,7 +386,7 @@
       &, * {
         cursor: not-allowed;
       }
-      & ~ span {
+      ~ span {
         &:after {
           @include box-shadow(
             inset -1px -1px 1px rgba(0, 0, 0, 0.1),
@@ -397,7 +398,7 @@
       }
     }
 
-    & ~ span {
+    ~ span {
       pointer-events: none;
       position: relative;
       display: inline-block;
@@ -453,7 +454,7 @@
     }
 
     &:checked {
-      & ~ span {
+      ~ span {
         &:after {
           left: 0 + $switchWidth - $buttonWeight - $space;
         }
@@ -465,7 +466,7 @@
 
   @if($full) {
     input[type='checkbox'] {
-      & ~ span {
+      ~ span {
         &:before {
           top: calc(50% - #{$buttonWeight / 2});
           height: $buttonWeight;
@@ -480,7 +481,7 @@
       }
 
       &:checked {
-        & ~ span {
+        ~ span {
           &:after {
             left: 0 + $switchWidth - $buttonWeight;
           }
@@ -490,17 +491,17 @@
     @if($value) {
       input[type='checkbox'] {
         &[disabled] {
-          & ~ span {
+          ~ span {
             &:before {
-              background-color: rgba(nth($value, 1) + 55, nth($value, 2) + 55, nth($value, 3) + 55, 0.2);
+              background-color: rgba(nth($value, 1) + 125, nth($value, 2) + 125, nth($value, 3) + 125, 1);
             }
             &:after {
-              background-color: rgba(nth($value, 1) + 105, nth($value, 2) + 85, nth($value, 3) + 85, 0.9);
+              background-color: rgba(nth($value, 1) + 125, nth($value, 2) + 125, nth($value, 3) + 125, 0.9);
             }
           }
         }
         &:checked {
-          & ~ span {
+          ~ span {
             &:before {
               background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 0.8);
             }
@@ -509,7 +510,7 @@
             }
           }
         }
-        & ~ span {
+        ~ span {
           &:before {
             background-color: rgba(nth($value, 1) + 75, nth($value, 2) + 75, nth($value, 3) + 75, 0.8);
           }
@@ -524,17 +525,17 @@
     @if($value) {
       input[type='checkbox'] {
         &[disabled] {
-          & ~ span {
+          ~ span {
             &:before {
-              background-color: rgba(nth($value, 1) + 55, nth($value, 2) + 55, nth($value, 3) + 55, 0.2);
+              background-color: rgba(nth($value, 1) + 125, nth($value, 2) + 125, nth($value, 3) + 125, 1);
             }
             &:after {
-              background-color: rgba(nth($value, 1) + 105, nth($value, 2) + 85, nth($value, 3) + 85, 0.9);
+              background-color: rgba(nth($value, 1) + 125, nth($value, 2) + 125, nth($value, 3) + 125, 0.9);
             }
           }
         }
         &:checked {
-          & ~ span {
+          ~ span {
             &:before {
               background-color: rgba(nth($value, 1) + 25, nth($value, 2) + 25, nth($value, 3) + 25, 0.8);
             }
@@ -543,7 +544,7 @@
             }
           }
         }
-        & ~ span {
+        ~ span {
           &:before {
             background-color: rgba(nth($value, 1) + 75, nth($value, 2) + 75, nth($value, 3) + 75, 0.8);
           }
@@ -557,7 +558,7 @@
 }
 
 // <div></div>
-@mixin paperx($type: '') {
+@mixin paper($type: 'pure') {
   position: relative;
   display: block;
   word-break: break-all;
@@ -572,7 +573,42 @@
   } @else if($type == 'shadow') {
     overflow: hidden;
     @include box-shadow(2px 2px 5px rgba(0, 0, 0, .2));
+  } @else if($type == 'convex') {
+    overflow: visible;
+    @include box-shadow(none);
+
+    &:before, &:after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      display: inline-block;
+      width: calc(100% - 20px);
+      height: 100%;
+
+      @include box-shadow(0 0 10px 5px rgba(0, 0, 0, .2));
+      @include border-bottom-left-radius(50% 10px);
+      @include border-bottom-right-radius(50% 10px);
+      @include border-top-left-radius(50% 10px);
+      @include border-top-right-radius(50% 10px);
+    }
+    &:before {
+      top: 10px;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: calc(100% - 20px);
+
+      @include border-bottom-left-radius(10px 50%);
+      @include border-bottom-right-radius(10px 50%);
+      @include border-top-left-radius(10px 50%);
+      @include border-top-right-radius(10px 50%);
+    }
   } @else if($type == 'horizontal-convex') {
+    overflow: visible;
+    @include box-shadow(none);
+
     &:after {
       content: "";
       z-index: -1;
@@ -582,7 +618,6 @@
       display: inline-block;
       width: calc(100% - 20px);
       height: 100%;
-      background: #777;
 
       @include box-shadow(0 0 10px 5px rgba(0, 0, 0, .2));
       @include border-bottom-left-radius(50% 10px);
@@ -591,6 +626,9 @@
       @include border-top-right-radius(50% 10px);
     }
   } @else if($type == 'vertical-convex') {
+    overflow: visible;
+    @include box-shadow(none);
+
     &:after {
       content: "";
       z-index: -1;
@@ -600,7 +638,6 @@
       display: inline-block;
       width: 100%;
       height: calc(100% - 20px);
-      background: #777;
 
       @include box-shadow(0 0 10px 5px rgba(0, 0, 0, .2));
       @include border-bottom-left-radius(10px 50%);
@@ -609,27 +646,32 @@
       @include border-top-right-radius(10px 50%);
     }
   } @else if($type == 'corner') {
+    overflow: visible;
+    @include box-shadow(none);
+    
     &:before, &:after {
       content: "";
       z-index: -1;
       position: absolute;
-      display: inline-block;
       bottom: 15px;
       left: 10px;
+
+      display: inline-block;
+
       width: 50%;
       max-width:300px;
-      background: #777;
+
       max-height: 100px;
       min-height: 10px;
 
-      @include transform(rotate(-3deg));
-      @include box-shadow(0 15px 10px #777);
+      @include transform(rotate(-4deg));
+      @include box-shadow(0 15px 10px rgba(31, 31, 31, .7));
     }
     &:after {
       right: 10px;
       left: auto;
 
-      @include transform(rotate(3deg));
+      @include transform(rotate(4deg));
     }
   }
 }
