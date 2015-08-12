@@ -3,7 +3,7 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-@mixin checkbox ($color: 'blue', $shadow: true) {
+@mixin checkbox($color: 'blue', $shadow: true) {
   $checkboxWidth: 16px;
   $checkboxHeight: 16px;
   $borderWidth: 2px;
@@ -20,6 +20,7 @@
   }
 
   label {
+    padding-left: 2px;
     cursor: pointer;
   }
 
@@ -35,9 +36,13 @@
 
     &[disabled] {
       cursor: not-allowed;
+
+      label {
+        cursor: not-allowed;
+      }
     }
 
-    &~.ckb-check {
+    & ~ span {
       position: relative;
       display: inline-block;
       z-index: 0;
@@ -76,8 +81,8 @@
     }
 
     &:checked {
-      &~.ckb-check {
-        @include animation(ckb-jelly .2s ease-out);
+      & ~ span {
+        @include animation(oa-material-checkbox-jelly-effect .2s ease-out);
         &:after {
           width: $tickWidth;
           height: $tickHeight;
@@ -93,28 +98,28 @@
     }
   }
 
-
-
   $value: map-get($btns, $color);
-  input[type='checkbox'] {
-    &[disabled] {
-      &~.ckb-check {
-        border: solid $borderWidth rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .25);
+  @if($value) {
+    input[type='checkbox'] {
+      &[disabled] {
+        & ~ span {
+          border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .25);
+        }
       }
-    }
-    &:checked {
-      &~.ckb-check {
-        border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .3);
+      &:checked {
+        & ~ span {
+          border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .3);
+        }
       }
-    }
-    &~.ckb-check {
-      border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .4);
-      &:after {
-        border-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
+      & ~ span {
+        border-color: rgba(nth($value, 1) - 100, nth($value, 2) - 100,nth($value, 3) - 100, .4);
+        &:after {
+          border-color: rgba(nth($value, 1), nth($value, 2), nth($value, 3), 1);
+        }
       }
     }
   }
-  @include keyframes(ckb-jelly) {
+  @include keyframes(oa-material-checkbox-jelly-effect) {
     0% {
       @include scale(1);
     }
