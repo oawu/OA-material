@@ -163,8 +163,6 @@ $names: ('pure', 'red', 'orange', 'yellow', 'green', 'blue', 'cyan', 'purple');
 
 .oa-paper {
   @include paper('pure');
-  width: 200px;
-  height: 150px;
 
   &.shadow {
     @include paper('shadow');

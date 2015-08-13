@@ -32,12 +32,16 @@
 
     <link href="http://fonts.googleapis.com/css?family=Gafata" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css" />
+    <link href="css/prettify/prettify.css" rel="stylesheet" type="text/css">
     <link href="css/public.css" rel="stylesheet" type="text/css" />
     <link href="css/scss.css" rel="stylesheet" type="text/css" />
+    <link href="css/oa.material.min.css" rel="stylesheet" type="text/css" />
 
     <script src="js/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
+    <script src="js/prettify/prettify.js" language="javascript" type="text/javascript" /></script>
     <script src="js/public.js" language="javascript" type="text/javascript" ></script>
     <script src="js/scss.js" language="javascript" type="text/javascript" ></script>
+
 
   </head>
   <body lang="zh-tw">
@@ -45,25 +49,732 @@
 
       <section>
         <h2>button</h2>
-
+        <h3>General</h3>
         <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
           <div>
-            <div>HTML</div>
-            <div>SCSS</div>
-            <div>JS</div>
+            <div class='e'>
+              <button class='oa-btn'>Pure Button</button>
+              <button class='oa-btn red'>Red Button</button>
+              <button class='oa-btn orange'>Orange Button</button>
+              <button class='oa-btn yellow'>Yellow Button</button>
+              <button class='oa-btn green'>Green Button</button>
+              <button class='oa-btn blue'>Blue Button</button>
+              <button class='oa-btn cyan'>Cyan Button</button>
+              <button class='oa-btn purple'>Purple Button</button>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;button class=&quot;b1&quot;&gt;Pure Button&lt;/button&gt;
+                &lt;button class=&quot;b2&quot;&gt;Red Button&lt;/button&gt;
+                &lt;button class=&quot;b3&quot;&gt;Orange Button&lt;/button&gt;
+                &lt;button class=&quot;b4&quot;&gt;Yellow Button&lt;/button&gt;
+                &lt;button class=&quot;b5&quot;&gt;Green Button&lt;/button&gt;
+                &lt;button class=&quot;b6&quot;&gt;Blue Button&lt;/button&gt;
+                &lt;button class=&quot;b7&quot;&gt;Cyan Button&lt;/button&gt;
+                &lt;button class=&quot;b8&quot;&gt;Purple Button&lt;/button&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .b1 { @include button(); }
+                .b2 { @include button('red'); }
+                .b3 { @include button('orange'); }
+                .b4 { @include button('yellow'); }
+                .b5 { @include button('green'); }
+                .b6 { @include button('blue'); }
+                .b7 { @include button('cyan'); }
+                .b8 { @include button('purple'); }
+              </pre>
+            </div>
           </div>
+        </div>
+
+        <h3>Jelly</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div><div>JavaScript</div></div>
           <div>
-            <div>asddd1</div>
-            <div>asddd2</div>
-            <div>asddd3</div>
+            <div class='e'>
+              <button class='oa-btn jelly'>Pure Button</button>
+              <button class='oa-btn jelly red'>Red Button</button>
+              <button class='oa-btn jelly orange'>Orange Button</button>
+              <button class='oa-btn jelly yellow'>Yellow Button</button>
+              <button class='oa-btn jelly green'>Green Button</button>
+              <button class='oa-btn jelly blue'>Blue Button</button>
+              <button class='oa-btn jelly cyan'>Cyan Button</button>
+              <button class='oa-btn jelly purple'>Purple Button</button>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;button class=&quot;b1 jelly&quot;&gt;Pure Button&lt;/button&gt;
+                &lt;button class=&quot;b2 jelly&quot;&gt;Red Button&lt;/button&gt;
+                &lt;button class=&quot;b3 jelly&quot;&gt;Orange Button&lt;/button&gt;
+                &lt;button class=&quot;b4 jelly&quot;&gt;Yellow Button&lt;/button&gt;
+                &lt;button class=&quot;b5 jelly&quot;&gt;Green Button&lt;/button&gt;
+                &lt;button class=&quot;b6 jelly&quot;&gt;Blue Button&lt;/button&gt;
+                &lt;button class=&quot;b7 jelly&quot;&gt;Cyan Button&lt;/button&gt;
+                &lt;button class=&quot;b8 jelly&quot;&gt;Purple Button&lt;/button&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .b1 { @include button(); }
+                .b2 { @include button('red'); }
+                .b3 { @include button('orange'); }
+                .b4 { @include button('yellow'); }
+                .b5 { @include button('green'); }
+                .b6 { @include button('blue'); }
+                .b7 { @include button('cyan'); }
+                .b8 { @include button('purple'); }
+              </pre>
+            </div>
+            <div>
+              <pre class='js prettyprint'>
+                $('button.jelly').click (function () {
+                  var events = 'animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd';
+
+                  $(this).addClass ('jelly-effect')
+                         .bind (events, function () {
+                           $(this).removeClass ('jelly-effect');
+                         });
+                });
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <h3>Disable</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <button disabled class='oa-btn'>Pure Button</button>
+              <button disabled class='oa-btn red'>Red Button</button>
+              <button disabled class='oa-btn orange'>Orange Button</button>
+              <button disabled class='oa-btn yellow'>Yellow Button</button>
+              <button disabled class='oa-btn green'>Green Button</button>
+              <button disabled class='oa-btn blue'>Blue Button</button>
+              <button disabled class='oa-btn cyan'>Cyan Button</button>
+              <button disabled class='oa-btn purple'>Purple Button</button>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;button disabled class=&quot;b1&quot;&gt;Pure Button&lt;/button&gt;
+                &lt;button disabled class=&quot;b2&quot;&gt;Red Button&lt;/button&gt;
+                &lt;button disabled class=&quot;b3&quot;&gt;Orange Button&lt;/button&gt;
+                &lt;button disabled class=&quot;b4&quot;&gt;Yellow Button&lt;/button&gt;
+                &lt;button disabled class=&quot;b5&quot;&gt;Green Button&lt;/button&gt;
+                &lt;button disabled class=&quot;b6&quot;&gt;Blue Button&lt;/button&gt;
+                &lt;button disabled class=&quot;b7&quot;&gt;Cyan Button&lt;/button&gt;
+                &lt;button disabled class=&quot;b8&quot;&gt;Purple Button&lt;/button&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .b1 { @include button(); }
+                .b2 { @include button('red'); }
+                .b3 { @include button('orange'); }
+                .b4 { @include button('yellow'); }
+                .b5 { @include button('green'); }
+                .b6 { @include button('blue'); }
+                .b7 { @include button('cyan'); }
+                .b8 { @include button('purple'); }
+              </pre>
+            </div>
           </div>
         </div>
       </section>
 
+
+
       <section>
         <h2>Radio</h2>
-        <article>asdasdadasdadasdasdasddasdasdadasdadasdasdasddasdasdadasdadasdasdasdd</article>
+        <h3>General</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <div class="oa-rdo"><input type="radio" id="radio1" name="radio"><span></span><label for="radio1">Item 1</label></div>
+              <div class="oa-rdo red"><input type="radio" id="radio2" name="radio"><span></span><label for="radio2">Item 2</label></div>
+              <div class="oa-rdo orange"><input type="radio" id="radio3" name="radio"><span></span><label for="radio3">Item 3</label></div>
+              <div class="oa-rdo yellow"><input type="radio" id="radio4" name="radio"><span></span><label for="radio4">Item 4</label></div>
+              <div class="oa-rdo green"><input type="radio" id="radio5" name="radio"><span></span><label for="radio5">Item 5</label></div>
+              <div class="oa-rdo blue"><input type="radio" id="radio6" name="radio"><span></span><label for="radio6">Item 6</label></div>
+              <div class="oa-rdo cyan"><input type="radio" id="radio7" name="radio"><span></span><label for="radio7">Item 7</label></div>
+              <div class="oa-rdo purple"><input type="radio" id="radio8" name="radio"><span></span><label for="radio8">Item 8</label></div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&quot;radio1&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio1&quot;&gt;Item 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio2 red&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio2&quot;&gt;Item 2&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio3 orange&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio3&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio3&quot;&gt;Item 3&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio4 yellow&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio4&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio4&quot;&gt;Item 4&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio5 green&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio5&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio5&quot;&gt;Item 5&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio6 blue&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio6&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio6&quot;&gt;Item 6&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio7 cyan&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio7&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio7&quot;&gt;Item 7&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio8 purple&quot;&gt;
+                  &lt;input type=&quot;radio&quot; id=&quot;radio8&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio8&quot;&gt;Item 8&lt;/label&gt;
+                &lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .radio1 { @include radio(); }
+                .radio2 { @include radio('red'); }
+                .radio3 { @include radio('orange'); }
+                .radio4 { @include radio('yellow'); }
+                .radio5 { @include radio('green'); }
+                .radio6 { @include radio('blue'); }
+                .radio7 { @include radio('cyan'); }
+                .radio8 { @include radio('purple'); }
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <h3>Disable</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <div class="oa-rdo"><input type="radio" disabled id="radio1-disable" name="radio"><span></span><label for="radio1-disable">Item 1</label></div>
+              <div class="oa-rdo red"><input type="radio" disabled id="radio2-disable" name="radio"><span></span><label for="radio2-disable">Item 2</label></div>
+              <div class="oa-rdo orange"><input type="radio" disabled id="radio3-disable" name="radio"><span></span><label for="radio3-disable">Item 3</label></div>
+              <div class="oa-rdo yellow"><input type="radio" disabled id="radio4-disable" name="radio"><span></span><label for="radio4-disable">Item 4</label></div>
+              <div class="oa-rdo green"><input type="radio" disabled id="radio5-disable" name="radio"><span></span><label for="radio5-disable">Item 5</label></div>
+              <div class="oa-rdo blue"><input type="radio" disabled id="radio6-disable" name="radio"><span></span><label for="radio6-disable">Item 6</label></div>
+              <div class="oa-rdo cyan"><input type="radio" disabled id="radio7-disable" name="radio"><span></span><label for="radio7-disable">Item 7</label></div>
+              <div class="oa-rdo purple"><input type="radio" disabled id="radio8-disable" name="radio"><span></span><label for="radio8-disable">Item 8</label></div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&quot;radio1&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio1&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio1&quot;&gt;Item 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio2 red&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio2&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio2&quot;&gt;Item 2&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio3 orange&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio3&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio3&quot;&gt;Item 3&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio4 yellow&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio4&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio4&quot;&gt;Item 4&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio5 green&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio5&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio5&quot;&gt;Item 5&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio6 blue&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio6&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio6&quot;&gt;Item 6&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio7 cyan&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio7&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio7&quot;&gt;Item 7&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;radio8 purple&quot;&gt;
+                  &lt;input type=&quot;radio&quot; disabled id=&quot;radio8&quot; name=&quot;radio&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;radio8&quot;&gt;Item 8&lt;/label&gt;
+                &lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .radio1 { @include radio(); }
+                .radio2 { @include radio('red'); }
+                .radio3 { @include radio('orange'); }
+                .radio4 { @include radio('yellow'); }
+                .radio5 { @include radio('green'); }
+                .radio6 { @include radio('blue'); }
+                .radio7 { @include radio('cyan'); }
+                .radio8 { @include radio('purple'); }
+              </pre>
+            </div>
+          </div>
+        </div>
       </section>
+
+
+
+      <section>
+        <h2>Checkbox</h2>
+        <h3>General</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <div class="oa-ckb"><input type="checkbox" id="checkbox1"><span></span><label for="checkbox1">Item 1</label></div>
+              <div class="oa-ckb red"><input type="checkbox" id="checkbox2"><span></span><label for="checkbox2">Item 2</label></div>
+              <div class="oa-ckb orange"><input type="checkbox" id="checkbox3"><span></span><label for="checkbox3">Item 3</label></div>
+              <div class="oa-ckb yellow"><input type="checkbox" id="checkbox4"><span></span><label for="checkbox4">Item 4</label></div>
+              <div class="oa-ckb green"><input type="checkbox" id="checkbox5"><span></span><label for="checkbox5">Item 5</label></div>
+              <div class="oa-ckb blue"><input type="checkbox" id="checkbox6"><span></span><label for="checkbox6">Item 6</label></div>
+              <div class="oa-ckb cyan"><input type="checkbox" id="checkbox7"><span></span><label for="checkbox7">Item 7</label></div>
+              <div class="oa-ckb purple"><input type="checkbox" id="checkbox8"><span></span><label for="checkbox8">Item 8</label></div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&quot;checkbox1&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox1&quot;&gt;Item 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox2 red&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox2&quot;&gt;Item 2&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox3 orange&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox3&quot;&gt;Item 3&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox4 yellow&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox4&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox4&quot;&gt;Item 4&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox5 green&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox5&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox5&quot;&gt;Item 5&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox6 blue&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox6&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox6&quot;&gt;Item 6&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox7 cyan&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox7&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox7&quot;&gt;Item 7&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox8 purple&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox8&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox8&quot;&gt;Item 8&lt;/label&gt;
+                &lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .checkbox1 { @include checkbox(); }
+                .checkbox2 { @include checkbox('red'); }
+                .checkbox3 { @include checkbox('orange'); }
+                .checkbox4 { @include checkbox('yellow'); }
+                .checkbox5 { @include checkbox('green'); }
+                .checkbox6 { @include checkbox('blue'); }
+                .checkbox7 { @include checkbox('cyan'); }
+                .checkbox8 { @include checkbox('purple'); }
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <h3>Disable</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <div class="oa-ckb"><input type="checkbox" disabled id="checkbox1-disable"><span></span><label for="checkbox1-disable">Item 1</label></div>
+              <div class="oa-ckb red"><input type="checkbox" disabled id="checkbox2-disable"><span></span><label for="checkbox2-disable">Item 2</label></div>
+              <div class="oa-ckb orange"><input type="checkbox" disabled id="checkbox3-disable"><span></span><label for="checkbox3-disable">Item 3</label></div>
+              <div class="oa-ckb yellow"><input type="checkbox" disabled id="checkbox4-disable"><span></span><label for="checkbox4-disable">Item 4</label></div>
+              <div class="oa-ckb green"><input type="checkbox" disabled id="checkbox5-disable"><span></span><label for="checkbox5-disable">Item 5</label></div>
+              <div class="oa-ckb blue"><input type="checkbox" disabled id="checkbox6-disable"><span></span><label for="checkbox6-disable">Item 6</label></div>
+              <div class="oa-ckb cyan"><input type="checkbox" disabled id="checkbox7-disable"><span></span><label for="checkbox7-disable">Item 7</label></div>
+              <div class="oa-ckb purple"><input type="checkbox" disabled id="checkbox8-disable"><span></span><label for="checkbox8-disable">Item 8</label></div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&quot;checkbox1&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox1&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox1&quot;&gt;Item 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox2 red&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox2&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox2&quot;&gt;Item 2&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox3 orange&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox3&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox3&quot;&gt;Item 3&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox4 yellow&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox4&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox4&quot;&gt;Item 4&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox5 green&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox5&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox5&quot;&gt;Item 5&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox6 blue&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox6&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox6&quot;&gt;Item 6&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox7 cyan&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox7&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox7&quot;&gt;Item 7&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkbox8 purple&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;checkbox8&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;checkbox8&quot;&gt;Item 8&lt;/label&gt;
+                &lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .radio1 { @include radio(); }
+                .radio2 { @include radio('red'); }
+                .radio3 { @include radio('orange'); }
+                .radio4 { @include radio('yellow'); }
+                .radio5 { @include radio('green'); }
+                .radio6 { @include radio('blue'); }
+                .radio7 { @include radio('cyan'); }
+                .radio8 { @include radio('purple'); }
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>Switch</h2>
+        <h3>General</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <div class="oa-swh"><input type="checkbox" id="switch1"><span></span><label for="switch1">Item 1</label></div>
+              <div class="oa-swh red"><input type="checkbox" id="switch2"><span></span><label for="switch2">Item 2</label></div>
+              <div class="oa-swh orange"><input type="checkbox" id="switch3"><span></span><label for="switch3">Item 3</label></div>
+              <div class="oa-swh yellow"><input type="checkbox" id="switch4"><span></span><label for="switch4">Item 4</label></div>
+              <div class="oa-swh green"><input type="checkbox" id="switch5"><span></span><label for="switch5">Item 5</label></div>
+              <div class="oa-swh blue"><input type="checkbox" id="switch6"><span></span><label for="switch6">Item 6</label></div>
+              <div class="oa-swh cyan"><input type="checkbox" id="switch7"><span></span><label for="switch7">Item 7</label></div>
+              <div class="oa-swh purple"><input type="checkbox" id="switch8"><span></span><label for="switch8">Item 8</label></div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&quot;switch1&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch1&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch1&quot;&gt;Item 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch2 red&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch2&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch2&quot;&gt;Item 2&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch3 orange&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch3&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch3&quot;&gt;Item 3&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch4 yellow&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch4&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch4&quot;&gt;Item 4&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch5 green&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch5&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch5&quot;&gt;Item 5&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch6 blue&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch6&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch6&quot;&gt;Item 6&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch7 cyan&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch7&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch7&quot;&gt;Item 7&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch8 purple&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch8&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch8&quot;&gt;Item 8&lt;/label&gt;
+                &lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .switch1 { @include switch(false); }
+                .switch2 { @include switch(false, 'red'); }
+                .switch3 { @include switch(false, 'orange'); }
+                .switch4 { @include switch(false, 'yellow'); }
+                .switch5 { @include switch(false, 'green'); }
+                .switch6 { @include switch(false, 'blue'); }
+                .switch7 { @include switch(false, 'cyan'); }
+                .switch8 { @include switch(false, 'purple'); }
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <h3>Full</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <div class="oa-swh full"><input type="checkbox" id="switch1-full"><span></span><label for="switch1-full">Item 1</label></div>
+              <div class="oa-swh full red"><input type="checkbox" id="switch2-full"><span></span><label for="switch2-full">Item 2</label></div>
+              <div class="oa-swh full orange"><input type="checkbox" id="switch3-full"><span></span><label for="switch3-full">Item 3</label></div>
+              <div class="oa-swh full yellow"><input type="checkbox" id="switch4-full"><span></span><label for="switch4-full">Item 4</label></div>
+              <div class="oa-swh full green"><input type="checkbox" id="switch5-full"><span></span><label for="switch5-full">Item 5</label></div>
+              <div class="oa-swh full blue"><input type="checkbox" id="switch6-full"><span></span><label for="switch6-full">Item 6</label></div>
+              <div class="oa-swh full cyan"><input type="checkbox" id="switch7-full"><span></span><label for="switch7-full">Item 7</label></div>
+              <div class="oa-swh full purple"><input type="checkbox" id="switch8-full"><span></span><label for="switch8-full">Item 8</label></div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&quot;switch1&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch1&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch1&quot;&gt;Item 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch2 red&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch2&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch2&quot;&gt;Item 2&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch3 orange&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch3&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch3&quot;&gt;Item 3&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch4 yellow&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch4&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch4&quot;&gt;Item 4&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch5 green&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch5&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch5&quot;&gt;Item 5&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch6 blue&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch6&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch6&quot;&gt;Item 6&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch7 cyan&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch7&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch7&quot;&gt;Item 7&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch8 purple&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; id=&quot;switch8&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch8&quot;&gt;Item 8&lt;/label&gt;
+                &lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .switch1 { @include switch(true); }
+                .switch2 { @include switch(true, 'red'); }
+                .switch3 { @include switch(true, 'orange'); }
+                .switch4 { @include switch(true, 'yellow'); }
+                .switch5 { @include switch(true, 'green'); }
+                .switch6 { @include switch(true, 'blue'); }
+                .switch7 { @include switch(true, 'cyan'); }
+                .switch8 { @include switch(true, 'purple'); }
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <h3>Disable</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e'>
+              <div class="oa-swh"><input type="checkbox" disabled id="switch1-disable"><span></span><label for="switch1-disabled">Item 1</label></div>
+              <div class="oa-swh red"><input type="checkbox" disabled id="switch2-disable"><span></span><label for="switch2-disabled">Item 2</label></div>
+              <div class="oa-swh orange"><input type="checkbox" disabled id="switch3-disable"><span></span><label for="switch3-disabled">Item 3</label></div>
+              <div class="oa-swh yellow"><input type="checkbox" disabled id="switch4-disable"><span></span><label for="switch4-disabled">Item 4</label></div>
+              <div class="oa-swh green"><input type="checkbox" disabled id="switch5-disable"><span></span><label for="switch5-disabled">Item 5</label></div>
+              <div class="oa-swh blue"><input type="checkbox" disabled id="switch6-disable"><span></span><label for="switch6-disabled">Item 6</label></div>
+              <div class="oa-swh cyan"><input type="checkbox" disabled id="switch7-disable"><span></span><label for="switch7-disabled">Item 7</label></div>
+              <div class="oa-swh purple"><input type="checkbox" disabled id="switch8-disable"><span></span><label for="switch8-disabled">Item 8</label></div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&quot;switch1&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch1&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch1&quot;&gt;Item 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch2 red&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch2&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch2&quot;&gt;Item 2&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch3 orange&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch3&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch3&quot;&gt;Item 3&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch4 yellow&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch4&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch4&quot;&gt;Item 4&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch5 green&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch5&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch5&quot;&gt;Item 5&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch6 blue&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch6&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch6&quot;&gt;Item 6&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch7 cyan&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch7&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch7&quot;&gt;Item 7&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switch8 purple&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; disabled id=&quot;switch8&quot;&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;label for=&quot;switch8&quot;&gt;Item 8&lt;/label&gt;
+                &lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .switch1 { @include switch(false); }
+                .switch2 { @include switch(false, 'red'); }
+                .switch3 { @include switch(false, 'orange'); }
+                .switch4 { @include switch(false, 'yellow'); }
+                .switch5 { @include switch(false, 'green'); }
+                .switch6 { @include switch(false, 'blue'); }
+                .switch7 { @include switch(false, 'cyan'); }
+                .switch8 { @include switch(false, 'purple'); }
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section>
+        <h2>Paper</h2>
+        <h3>General</h3>
+        <div class='tabs'>
+          <div><div>效果</div><div>HTML</div><div>SCSS</div></div>
+          <div>
+            <div class='e papers'>
+              <div class='oa-paper'>pure</div>
+              <div class='oa-paper shadow'>shadow</div>
+              <div class='oa-paper corner'>corner</div>
+              <div class='oa-paper convex'>convex</div>
+              <div class='oa-paper horizontal-convex'>horizontal-convex</div>
+              <div class='oa-paper vertical-convex'>vertical-convex</div>
+            </div>
+            <div>
+              <pre class='html prettyprint'>
+                &lt;div class=&#39;paper1&#39;&gt;pure&lt;/div&gt;
+                &lt;div class=&#39;paper2&#39;&gt;shadow&lt;/div&gt;
+                &lt;div class=&#39;paper3&#39;&gt;corner&lt;/div&gt;
+                &lt;div class=&#39;paper4&#39;&gt;convex&lt;/div&gt;
+                &lt;div class=&#39;paper5&#39;&gt;horizontal-convex&lt;/div&gt;
+                &lt;div class=&#39;paper6&#39;&gt;vertical-convex&lt;/div&gt;
+              </pre>
+            </div>
+            <div>
+              <pre class='css prettyprint'>
+                @import "functions/_oa-material";
+
+                .paper1 { @include paper(); }
+                .paper2 { @include paper('shadow'); }
+                .paper3 { @include paper('corner'); }
+                .paper4 { @include paper('convex'); }
+                .paper5 { @include paper('horizontal-convex'); }
+                .paper6 { @include paper('vertical-convex'); }
+              </pre>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+
 
     </div>
   </body>

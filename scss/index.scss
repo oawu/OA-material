@@ -28,6 +28,9 @@ html {
           border-bottom: 4px solid rgba(39, 40, 34, .1);
         }
         h2 {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          
           &:before{
             content: " ";
             display: block;
@@ -62,5 +65,12 @@ html {
         }
       }
     }
+  }
+}
+
+.papers {
+  > div {
+    width: 300px;
+    height: 200px;
   }
 }
