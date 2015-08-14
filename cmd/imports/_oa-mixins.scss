@@ -4,14 +4,13 @@
  */
 
 @import "functions/_oa-input";
-@import "functions/_oa-button";
 @import "functions/_oa-hyperlink";
 @import "functions/_oa-alert";
 @import "functions/_oa-load";
 @import "functions/_oa-table";
 @import "functions/_oa-textarea";
-@import "functions/_oa-paper";
-@import "functions/_oa-checkbox";
+
+@import "functions/_oa-material";
 
 @mixin font-smoothing ($val: antialiased) {
   -moz-osx-font-smoothing: $val;
