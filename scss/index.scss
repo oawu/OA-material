@@ -31,20 +31,6 @@ html {
           padding: 5px;
           padding-left: 10px;
           border-left: 4px solid rgba(39, 40, 34, .1);
-
-          &:before{
-            content: " ";
-            display: block;
-            visibility: hidden;
-            @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
-              height: 50px;
-              margin-top: -50px;
-            }
-            @media screen and (min-width: #{$mediaMobileWidth}) {
-              height: 48px;
-              margin-top: -48px;
-            }
-          }
         }
         h3 {
           position: relative;
