@@ -5,32 +5,33 @@
 
 @import "_oa";
 
-
 html {
   body {
     #container {
       .area {
+        margin-top: 20px;
         @include clearfix();
 
         + .area {
           margin-top: 50px;
         }
 
+        a {
+          @include a(0, false, rgba(50, 50, 50, 0.8), rgba(50, 50, 50, 1));
+          font-weight: bold;
+        }
         h2, h3 {
-          a {
-            @include a(0, false, rgba(50, 50, 50, 0.8), rgba(50, 50, 50, 1));
-            font-weight: bold;
-          }
-          text-align: left;
-          padding-bottom: 10px;
-          padding-left: 5px;
           margin: 0;
-          border-bottom: 4px solid rgba(39, 40, 34, .1);
+          text-align: left;
         }
         h2 {
           text-transform: uppercase;
           letter-spacing: 2px;
-          
+          font-size: 30px;
+          padding: 5px;
+          padding-left: 10px;
+          border-left: 4px solid rgba(39, 40, 34, .1);
+
           &:before{
             content: " ";
             display: block;
@@ -46,11 +47,26 @@ html {
           }
         }
         h3 {
+          position: relative;
           border: 0;
           margin: 0;
           margin-top: 15px;
-          padding: 0;
-          padding-left: 20px;
+          margin-left: 20px;
+          padding: 10px;
+          padding-left: 17px;
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: 0;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(39, 40, 34, .1);
+            @include box-shadow(0 0 2px rgba(39, 40, 34, 1));
+            @include border-radius(50%);
+          }
 
           ~ div {
             text-align: left;

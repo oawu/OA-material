@@ -37,8 +37,8 @@ $(function () {
   var links = {
     left: [
       {name: '首頁', file: 'index.html', target: '_self'},
-      {name: 'SCSS', file: 'scss.html', target: '_self'},
-      {name: 'CSS', file: 'css.html', target: '_self'},
+      {name: '使用CSS', file: 'css.html', target: '_self'},
+      {name: '使用SCSS', file: 'scss.html', target: '_self'},
     ],
     right: [
       {name: '關於', file: 'about.html', target: '_self'},
