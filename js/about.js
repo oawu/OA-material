@@ -24,7 +24,7 @@ $(function () {
       "此 Repository 開發工具主要使用 <a href='http://gulpjs.com/' target='_blank'>Gulp</a>、<a href='http://compass-style.org/' target='_blank'>Compass</a> 以及 <a href='https://jquery.com/' target='_blank'>jQuery</a> 語言所建立，主要架構則使用 <a href='https://github.com/comdan66/oaf2e/' target='_blank'>OAF2E v1.2</a>。",
       "相關概念也參考了 <a href='https://github.com/tedshd/' target='_blank'>Tedshd's GitHub</a> 所設計的 <a href='https://github.com/tedshd/material_design_for_web' target='_blank'>material_design_for_web</a>。",
       "資料夾 lib 內包含了 <a href='https://github.com/comdan66/OA-material/blob/master/lib/_oa-material.scss' target='_blank'>_oa-material.scss</a>、<a href='https://github.com/comdan66/OA-material/blob/master/lib/oa.material.css' target='_blank'>oa.material.css</a>、<a href='https://github.com/comdan66/OA-material/blob/master/lib/oa.material.min.css' target='_blank'>oa.material.min.css</a>，三隻檔案提供了 <b>scss</b>、<b>css</b> 兩種使用方式的檔案。",
-      "Demo 範例頁面: <a href='http://comdan66.github.io/OA-material/index.html' target='_blank'>http://comdan66.github.io/OA-material/index.html</a>"
+      "Demo 範例頁面: <a href='http://works.ioa.tw/OA-material/index.html' target='_blank'>http://works.ioa.tw/OA-material/index.html</a>"
     ]
   };
   var about = {
@@ -32,7 +32,7 @@ $(function () {
     lis: [
       "作者名稱 - <a href='http://www.ioa.tw/' target='_blank'>OA Wu</a>",
       "E-mail - <a href='mailto:comdan66@gmail.com'>comdan66@gmail.com</a>",
-      "作品名稱 - <a href='http://comdan66.github.io/OA-material/index.html' target='_blank'>OA-material</a>",
+      "作品名稱 - <a href='http://works.ioa.tw/OA-material/index.html' target='_blank'>OA-material</a>",
       "最新版本 - 2.0.0",
       "GitHub - <a href='https://github.com/comdan66/OA-material' target='_blank'>OA-material</a>",
       "相關資源 - <a href='https://jquery.com/' target='_blank'>jQuery</a>",

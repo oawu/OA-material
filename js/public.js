@@ -7,16 +7,16 @@
 var ENVIRONMENT = 'production';
 
 if (ENVIRONMENT == 'dev') {
-  window.url = 'http://dev.comdan66.github.io/OA-material/';
+  window.url = 'http://dev.works.ioa.tw/OA-material/';
 } else {
-  window.url = 'http://comdan66.github.io/OA-material/';
+  window.url = 'http://works.ioa.tw/OA-material/';
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-46121102-7', 'auto');
+  ga('create', 'UA-46121102-26', 'auto');
   ga('send', 'pageview');
 }
 
@@ -42,7 +42,7 @@ $(function () {
     ],
     right: [
       {name: '關於', file: 'about.html', target: '_self'},
-      {name: '更多', file: 'http://comdan66.github.io/index.html', target: '_blank'},
+      {name: '更多', file: 'http://works.ioa.tw/index.html', target: '_blank'},
     ]
   };
 

@@ -1,6 +1,6 @@
 /**
  * @author      OA Wu <comdan66@gmail.com>
- * @copyright   Copyright (c) 2015 OA Wu Design
+ * @copyright   Copyright (c) 2016 OA Wu Design
  */
 
 @mixin a($underLineHeight: 0, $d4UnderLine: false, $color: rgba(42, 90, 149, 0.7), $hoverColor: rgba(12, 65, 109, .85)) {
@@ -9,7 +9,7 @@
   color: $color;
   font-weight: normal;
   text-decoration: none;
-  padding: 2px;
+  padding: 0 2px;
   padding-bottom: $underLineHeight;
   @include transition(all .3s);
 
