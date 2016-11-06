@@ -10,7 +10,7 @@ Material 風格的 UI 設計。 這是一個藉由 Compass、HTML 以及 jQuery.
 
 <br/>
 ## DEMO
-* Demo 範例頁面會有詳細解說: [http://works.ioa.tw/OA-material/](http://works.ioa.tw/OA-material/)
+* Demo 範例頁面會有詳細解說: [https://works.ioa.tw/OA-material/index.html](https://works.ioa.tw/OA-material/index.html)
 ![demo](img/md/01.png)
 
 
@@ -26,7 +26,7 @@ Material 風格的 UI 設計。 這是一個藉由 Compass、HTML 以及 jQuery.
 
 * * 資料夾 lib 內包含了 [_oa-material.scss](https://github.com/comdan66/OA-material/blob/master/lib/_oa-material.scss)、[oa.material.css](https://github.com/comdan66/OA-material/blob/master/lib/oa.material.css)、[oa.material.min.css](https://github.com/comdan66/OA-material/blob/master/lib/oa.material.min.css)，三隻檔案提供了 scss、css 兩種使用方式的檔案。
 
-* Demo 範例頁面: [http://works.ioa.tw/OA-material/index.html](http://works.ioa.tw/OA-material/index.html)
+* Demo 範例頁面: [https://works.ioa.tw/OA-material/index.html](https://works.ioa.tw/OA-material/index.html)
 
 
 <br/>
